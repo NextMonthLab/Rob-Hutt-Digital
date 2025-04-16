@@ -1,0 +1,94 @@
+✅ Prompt for Replit: Personal Brand Digital Marketing Web App for Rob Hutt (Powered by NextMonth)
+
+Project Name:
+rob-hutt-digital
+
+Purpose:
+Create a modular personal brand web app for Rob Hutt that acts as a professional gateway and project builder within the NextMonth Dev ecosystem. This app showcases Rob’s expertise in digital strategy, automation, creative direction, and studio delivery—while also serving as an active testbed for CPT-based tool development inside NextMonth.
+
+The site should integrate with the NextMonth Dev environment using Custom Post Types (CPTs, referred to as “Packages”) to define and populate reusable tools and workflows.
+
+⸻
+
+🎨 Design Requirements
+	•	Bold, minimal aesthetic with a modern font stack and clean whitespace
+	•	Use deep blue, charcoal, or crimson as the accent color
+	•	Mobile-first, responsive layout
+	•	Modular card-style structure for services
+	•	All sections should correspond to CPTs (Packages) in NextMonth Vault
+	•	Dynamic routing to enable future additions of Blog, Testimonials, Case Studies, etc.
+
+⸻
+
+🧱 Page Structure & CPT Integration
+
+Each screen should be a NextMonth Dev Screen with corresponding CPT setup (type: package) and allow for future automation mapping.
+
+⸻
+
+1. Homepage (Screen: “Homepage”)
+	•	Hero section (static content or from CPT: homepage_hero)
+	•	Rob Hutt – Digital Strategy & Creative Execution
+	•	Tagline: Brand builder. Automation specialist. Filmmaker.
+	•	CTA: Book a 15-minute intro call
+	•	Pull in dynamic blocks via CPT: highlight_cards or feature_sections
+
+⸻
+
+2. Services Overview (Screen: “Services”)
+
+Each service should be structured as a CPT (package) with:
+	•	Title
+	•	Icon or image
+	•	Description
+	•	Linked automation (optional)
+	•	Tag: personal_brand
+
+Initial services to include:
+	•	📡 Studio Build & Delivery
+“I design and deliver YouTube and podcast studios—customised to your brand and operational within two weeks.”
+	•	🎨 Brand Identity & Development
+“From brand refresh to full rebrand, I handle design, messaging, and execution.”
+	•	⚙️ Marketing Automation
+“I streamline your digital marketing by removing bottlenecks, replacing them with smooth automation.”
+	•	🎬 Video Strategy & Direction
+“As an award-winning filmmaker, I help bring clarity and story to your video brand.”
+	•	📰 Press & PR Support
+“From press releases to high-impact positioning—I help you get seen, shared, and remembered.”
+
+Each card should allow for linking to individual detail pages if expanded later.
+
+⸻
+
+3. About (Screen: “About Rob”)
+
+CPT: about_page
+	•	Bio
+	•	Awards & Credentials
+	•	Optional short video intro
+	•	Quote block or “Why I do this” paragraph
+	•	Skills tags or vertical bar chart for creative/technical split
+
+⸻
+
+4. Contact (Screen: “Contact”)
+	•	Form (linked to NextMonth Automation or webhook for email + n8n trigger)
+	•	Simple fields: Name, Email, Message
+	•	Option to embed calendar link (Calendly/TidyCal)
+	•	Footer with social links (LinkedIn, YouTube, Instagram)
+
+⸻
+
+🧠 NextMonth Dev Integration Instructions
+	•	Each major section (Services, About, Contact) should be backed by a CPT (package) in the Vault
+	•	CPTs should include optional automation mappings to trigger actions (e.g., booking flows, lead nurturing)
+	•	Use the Dev Console to manage screen setup, automation pairing, and plugin versioning
+	•	Include REST endpoints for external apps to retrieve bio, services, and contact triggers
+
+⸻
+
+🛠 Tech Stack Guidance
+	•	Use HTML/CSS with Tailwind OR React with component structure
+	•	Animate card entrances using Framer Motion (if React)
+	•	Form submissions should be routed through n8n via the /submit_cpt mini-trunk logic
+	•	Page structure should be flexible and expandable—this will be a living project
