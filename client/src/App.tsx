@@ -78,6 +78,16 @@ function AppRoutes() {
 }
 
 function App() {
+  useEffect(() => {
+    // Import SOT client but don't block rendering
+    import('./lib/sotClient').then(({ sotClient }) => {
+      // SOT client will auto-initialize on import
+      console.log('[NextMonth Integration] SOT client initialized');
+    }).catch(err => {
+      console.error('[NextMonth Integration] Failed to load SOT client:', err);
+    });
+  }, []);
+  
   return (
     <QueryClientProvider client={queryClient}>
       <AppRoutes />

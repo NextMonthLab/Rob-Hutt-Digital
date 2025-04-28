@@ -25,13 +25,38 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const validatedData = insertContactSubmissionSchema.parse(req.body);
       
       // Store the contact submission
-      // This would trigger an automation flow in NextMonth
-      await storage.createContactSubmission({
+      const submission = await storage.createContactSubmission({
         name: validatedData.name,
         email: validatedData.email,
         message: validatedData.message,
         automation: "contact_form"
       });
+      
+      // Get the SOT client profile for webhook notification
+      const clientProfile = await storage.getSotClientProfile();
+      
+      // If SOT integration is active and we have a client profile, send webhook
+      if (clientProfile) {
+        // Import webhook utilities
+        const { sendSotWebhook, createSotAuditLog } = require('./utils/webhook');
+        
+        // Create audit log for the submission
+        createSotAuditLog('contact_submission', {
+          submissionId: submission.id,
+          name: submission.name,
+          email: submission.email,
+          timestamp: submission.createdAt
+        });
+        
+        // Send webhook notification about the new contact submission
+        await sendSotWebhook('contact_submission', {
+          submissionId: submission.id,
+          name: submission.name, 
+          email: submission.email,
+          timestamp: submission.createdAt,
+          automation: "contact_form"
+        }, clientProfile);
+      }
       
       return res.status(200).json({ 
         success: true, 
