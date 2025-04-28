@@ -4,6 +4,56 @@ import {
   type InsertContactSubmission
 } from "@shared/schema";
 
+// SOT Client Profile type
+export type SotClientProfile = {
+  businessId: string;
+  businessName: string;
+  businessType: string;
+  industry: string;
+  description: string;
+  location: {
+    city: string;
+    country: string;
+  };
+  dateOnboarded: string;
+  platformBlueprintInformation: {
+    currentBlueprintVersion: string;
+    pagesPublished: string[];
+    toolsInstalled: string[];
+    automationsActive: string[];
+    lastDeploymentDate: string;
+    hostingEnvironment: string;
+  };
+  activityTracking: {
+    totalCreditsPurchased: number;
+    totalCreditsConsumed: number;
+    lastActivityTimestamp: string;
+    accountStatus: string;
+  };
+  externalPublicInfo: {
+    websiteUrl: string;
+    publicLinkedIn: string;
+    publicYouTubeChannel: string;
+    podcastInfo: Record<string, any>;
+  };
+  dynamicUpdateTriggers: {
+    realtimeWebhookEnabled: boolean;
+    updateFrequency: string;
+    lastSyncTimestamp: string;
+  };
+  systemMetadata: {
+    instanceId: string;
+    instanceType: string;
+    tenantId: string;
+    isTemplate: boolean;
+    isCloneable: boolean;
+    supportTier: string;
+    statusCheckFrequency: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+};
+
 export interface IStorage {
   // User methods
   getUser(id: number): Promise<User | undefined>;
@@ -22,6 +72,10 @@ export interface IStorage {
   
   // Contact methods
   createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission>;
+  
+  // SOT integration methods
+  updateSotClientProfile(profile: SotClientProfile): Promise<SotClientProfile>;
+  getSotClientProfile(): Promise<SotClientProfile | null>;
 }
 
 export class MemStorage implements IStorage {
@@ -30,6 +84,7 @@ export class MemStorage implements IStorage {
   private highlightCards: Map<number, HighlightCard>;
   private about: About | undefined;
   private contactSubmissions: Map<number, ContactSubmission>;
+  private sotClientProfile: SotClientProfile | null;
   
   private userCurrentId: number;
   private serviceCurrentId: number;
@@ -41,6 +96,7 @@ export class MemStorage implements IStorage {
     this.services = new Map();
     this.highlightCards = new Map();
     this.contactSubmissions = new Map();
+    this.sotClientProfile = null;
     
     this.userCurrentId = 1;
     this.serviceCurrentId = 1;
@@ -95,10 +151,32 @@ export class MemStorage implements IStorage {
       ...submission, 
       id, 
       createdAt: timestamp,
-      processed: false
+      processed: false,
+      automation: submission.automation || null
     };
     this.contactSubmissions.set(id, contactSubmission);
     return contactSubmission;
+  }
+  
+  // SOT integration methods
+  async updateSotClientProfile(profile: SotClientProfile): Promise<SotClientProfile> {
+    this.sotClientProfile = {
+      ...profile,
+      systemMetadata: {
+        ...profile.systemMetadata,
+        updatedAt: new Date().toISOString()
+      }
+    };
+    
+    // After updating the SOT profile, we should trigger a webhook to notify
+    // any systems dependent on this data that an update has occurred
+    console.log(`SOT Client Profile updated: ${this.sotClientProfile.businessId}`);
+    
+    return this.sotClientProfile;
+  }
+  
+  async getSotClientProfile(): Promise<SotClientProfile | null> {
+    return this.sotClientProfile;
   }
 }
 

@@ -31,24 +31,27 @@ const Hero = ({
               {tagline}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Link href="/#contact">
-                <motion.a 
-                  className="inline-block bg-[#1e3a8a] text-white font-['Montserrat'] font-semibold py-3 px-6 rounded-md shadow-md hover:bg-[#1e3a8a]/90 transition-colors text-center"
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Book a 15-minute intro call
-                </motion.a>
-              </Link>
-              <Link href="/#services">
-                <motion.a 
-                  className="inline-block bg-white text-[#1e3a8a] border border-[#1e3a8a] font-['Montserrat'] font-semibold py-3 px-6 rounded-md hover:bg-gray-50 transition-colors text-center"
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  View my services
-                </motion.a>
-              </Link>
+              <motion.div 
+                className="inline-block bg-[#1e3a8a] text-white font-['Montserrat'] font-semibold py-3 px-6 rounded-md shadow-md hover:bg-[#1e3a8a]/90 transition-colors text-center cursor-pointer"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => {
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Book a 15-minute intro call
+              </motion.div>
+              
+              <motion.div 
+                className="inline-block bg-white text-[#1e3a8a] border border-[#1e3a8a] font-['Montserrat'] font-semibold py-3 px-6 rounded-md hover:bg-gray-50 transition-colors text-center cursor-pointer"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => {
+                  document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                View my services
+              </motion.div>
             </div>
           </motion.div>
           

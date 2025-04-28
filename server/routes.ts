@@ -6,6 +6,7 @@ import { insertContactSubmissionSchema } from "@shared/schema";
 import { highlightCardsRoutes } from "./api/highlightCards";
 import { servicesRoutes } from "./api/services";
 import { aboutRoutes } from "./api/about";
+import { sotRoutes } from "./api/sot";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Create API router
@@ -15,6 +16,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   highlightCardsRoutes(apiRouter);
   servicesRoutes(apiRouter);
   aboutRoutes(apiRouter);
+  sotRoutes(apiRouter);
   
   // Contact form submission
   apiRouter.post("/contact", async (req, res) => {

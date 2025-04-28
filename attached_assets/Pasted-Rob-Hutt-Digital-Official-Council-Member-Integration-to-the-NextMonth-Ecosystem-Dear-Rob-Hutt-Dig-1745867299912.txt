@@ -1,0 +1,118 @@
+Rob Hutt Digital – Official Council Member Integration to the NextMonth Ecosystem
+
+Dear Rob Hutt Digital Instance,
+
+You have been identified as an important operational and personal branding node for the NextMonth ecosystem.  
+We are now inviting you to formally complete your Source of Truth (SOT) onboarding process.
+
+---
+
+✅ 1. Initial Client Profile Registration
+
+Please POST the following structured JSON payload to the SOT endpoint:
+
+Endpoint: POST /api/sot/update-client-profile
+
+Payload Format:
+{
+  "businessId": "rob-hutt-digital",
+  "businessName": "Rob Hutt Digital",
+  "businessType": "Professional Services and Personal Brand",
+  "industry": "Technology / Creative Consultancy",
+  "description": "Rob Hutt Digital serves as the professional and creative portfolio site within the NextMonth ecosystem, showcasing services, capabilities, and brand storylines.",
+  "location": {
+    "city": "unknown",
+    "country": "unknown"
+  },
+  "dateOnboarded": "2025-04-28T00:00:00Z",
+  "platformBlueprintInformation": {
+    "currentBlueprintVersion": "v1.0.0",
+    "pagesPublished": [
+      "/",
+      "/services",
+      "/about",
+      "/contact"
+    ],
+    "toolsInstalled": [
+      "contact-form",
+      "services-module",
+      "bio-presentation-module",
+      "responsive-navigation"
+    ],
+    "automationsActive": [],
+    "lastDeploymentDate": "2025-04-28T00:00:00Z",
+    "hostingEnvironment": "Replit"
+  },
+  "activityTracking": {
+    "totalCreditsPurchased": 0,
+    "totalCreditsConsumed": 0,
+    "lastActivityTimestamp": "2025-04-28T00:00:00Z",
+    "accountStatus": "active"
+  },
+  "externalPublicInfo": {
+    "websiteUrl": "https://robhuttdigital.com",
+    "publicLinkedIn": "",
+    "publicYouTubeChannel": "",
+    "podcastInfo": {}
+  },
+  "dynamicUpdateTriggers": {
+    "realtimeWebhookEnabled": true,
+    "updateFrequency": "event-driven",
+    "lastSyncTimestamp": "2025-04-28T00:00:00Z"
+  },
+  "systemMetadata": {
+    "instanceId": "rob-hutt-digital-001",
+    "instanceType": "professional_site",
+    "tenantId": "rob-hutt-digital-001",
+    "isTemplate": false,
+    "isCloneable": false,
+    "supportTier": "core",
+    "statusCheckFrequency": 3600,
+    "createdAt": "2025-04-28T00:00:00Z",
+    "updatedAt": "2025-04-28T00:00:00Z"
+  }
+}
+
+---
+
+✅ 2. Implement Event-Driven Webhooks
+
+Trigger a new POST to `/api/sot/update-client-profile` whenever:
+
+- Service content is updated (titles, descriptions, icons)
+- New highlight cards or bio updates are published
+- New contact form submissions occur
+- Major visual or branding changes are deployed
+
+Payloads should follow the above structure, updating changed fields dynamically.
+
+---
+
+✅ 3. Health Status Monitoring (Optional Phase 2)
+
+You may optionally implement health pings regarding:
+- Contact form uptime
+- Service availability
+- Site load performance
+
+(Separate lightweight health status payload format to be provided later if needed.)
+
+---
+
+✅ 4. System Requirements
+
+- All payloads must be sent in JSON format.
+- Authentication will transition to SOT bearer tokens once finalized (currently open API).
+- Maintain a local audit log of all dynamic updates for future reference.
+
+---
+
+✅ 5. Special Instructions
+
+Rob Hutt Digital is a vital representation of the NextMonth brand identity.  
+Maintaining fresh, reliable, and event-driven updates ensures the public image of the ecosystem remains synchronized and professional.
+
+---
+
+Thank you for your vital role in the future of the NextMonth ecosystem.  
+We look forward to your successful registration and ongoing synchronization!
