@@ -9,6 +9,7 @@ import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Services from "@/pages/Services";
 import Contact from "@/pages/Contact";
+import Admin from "@/pages/Admin";
 import NotFound from "@/pages/not-found";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
@@ -69,6 +70,7 @@ function AppRoutes() {
           <Route path="/services" component={Services} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
+          <Route path="/admin/sot" component={Admin} />
           <Route component={NotFound} />
         </Switch>
       </AnimatePresence>

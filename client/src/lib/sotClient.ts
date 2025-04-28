@@ -1,4 +1,5 @@
 import { apiRequest } from "./queryClient";
+import axios from 'axios';
 
 /**
  * Client-side utility for interacting with the Source of Truth (SOT) API
@@ -38,10 +39,12 @@ interface ISotClient {
  */
 class SotClient implements ISotClient {
   constructor() {
-    // Initialize on client startup
-    this.initialize().catch(err => {
-      console.error("Failed to initialize SOT client:", err);
-    });
+    // Initialize on client startup after a short delay to ensure the app is fully loaded
+    setTimeout(() => {
+      this.initialize().catch(err => {
+        console.error("Failed to initialize SOT client:", err);
+      });
+    }, 1000);
   }
   
   /**
@@ -49,13 +52,9 @@ class SotClient implements ISotClient {
    */
   async initialize(): Promise<any> {
     try {
-      const response = await apiRequest({
-        url: "/api/sot/initialize",
-        method: "POST"
-      });
-      
-      console.log("[SOT] Initialized client profile:", response.success);
-      return response;
+      const response = await axios.post('/api/sot/initialize');
+      console.log("[SOT] Initialized client profile:", response.data.success);
+      return response.data;
     } catch (error) {
       console.error("[SOT] Failed to initialize client profile:", error);
       throw error;
@@ -67,12 +66,8 @@ class SotClient implements ISotClient {
    */
   async getClientProfile(): Promise<any> {
     try {
-      const response = await apiRequest({
-        url: "/api/sot/client-profile",
-        method: "GET"
-      });
-      
-      return response;
+      const response = await axios.get('/api/sot/client-profile');
+      return response.data;
     } catch (error) {
       console.error("[SOT] Failed to get client profile:", error);
       throw error;
@@ -86,16 +81,12 @@ class SotClient implements ISotClient {
    */
   async triggerWebhook(eventType: SotEventType, payload: any): Promise<any> {
     try {
-      const response = await apiRequest({
-        url: "/api/sot/trigger-webhook",
-        method: "POST",
-        data: {
-          eventType,
-          payload
-        }
+      const response = await axios.post('/api/sot/trigger-webhook', {
+        eventType,
+        payload
       });
       
-      return response;
+      return response.data;
     } catch (error) {
       console.error(`[SOT] Failed to trigger webhook for event '${eventType}':`, error);
       throw error;
@@ -107,12 +98,8 @@ class SotClient implements ISotClient {
    */
   async checkHealth(): Promise<any> {
     try {
-      const response = await apiRequest({
-        url: "/api/sot/health",
-        method: "GET"
-      });
-      
-      return response;
+      const response = await axios.get('/api/sot/health');
+      return response.data;
     } catch (error) {
       console.error("[SOT] Health check failed:", error);
       throw error;
