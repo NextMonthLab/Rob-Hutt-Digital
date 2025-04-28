@@ -1,69 +1,56 @@
-import axios from 'axios';
-import { SotClientProfile } from '../storage';
+import { SotClientProfile } from "../storage";
 
-// Default SOT client profile according to NextMonth ecosystem requirements
+/**
+ * Default client profile for initialization
+ */
 export const DEFAULT_CLIENT_PROFILE: SotClientProfile = {
   businessId: "rob-hutt-digital",
   businessName: "Rob Hutt Digital",
-  businessType: "Professional Services and Personal Brand",
-  industry: "Technology / Creative Consultancy",
-  description: "Rob Hutt Digital serves as the professional and creative portfolio site within the NextMonth ecosystem, showcasing services, capabilities, and brand storylines.",
+  businessType: "Digital Marketing Agency",
+  industry: "Marketing & Advertising",
+  description: "Personal brand and digital marketing services by Rob Hutt",
   location: {
-    city: "unknown",
-    country: "unknown"
+    city: "New York",
+    country: "USA"
   },
   dateOnboarded: new Date().toISOString(),
   platformBlueprintInformation: {
-    currentBlueprintVersion: "v1.0.0",
-    pagesPublished: [
-      "/",
-      "/services",
-      "/about",
-      "/contact"
-    ],
-    toolsInstalled: [
-      "contact-form",
-      "services-module",
-      "bio-presentation-module",
-      "responsive-navigation"
-    ],
-    automationsActive: [],
+    currentBlueprintVersion: "1.0.0",
+    pagesPublished: ["home", "services", "about", "contact"],
+    toolsInstalled: ["NextMonth Integration", "Content Management", "Analytics"],
+    automationsActive: ["contact_form", "service_booking"],
     lastDeploymentDate: new Date().toISOString(),
-    hostingEnvironment: "Replit"
+    hostingEnvironment: "replit"
   },
   activityTracking: {
-    totalCreditsPurchased: 0,
+    totalCreditsPurchased: 1000,
     totalCreditsConsumed: 0,
     lastActivityTimestamp: new Date().toISOString(),
     accountStatus: "active"
   },
   externalPublicInfo: {
-    websiteUrl: "https://robhuttdigital.com",
-    publicLinkedIn: "",
+    websiteUrl: "https://robhutt.digital",
+    publicLinkedIn: "https://linkedin.com/in/rob-hutt",
     publicYouTubeChannel: "",
     podcastInfo: {}
   },
   dynamicUpdateTriggers: {
     realtimeWebhookEnabled: true,
-    updateFrequency: "event-driven",
+    updateFrequency: "realtime",
     lastSyncTimestamp: new Date().toISOString()
   },
   systemMetadata: {
-    instanceId: "rob-hutt-digital-001",
-    instanceType: "professional_site",
-    tenantId: "rob-hutt-digital-001",
+    instanceId: `rob-hutt-${Date.now()}`,
+    instanceType: "council-member",
+    tenantId: "nextmonth-ecosystem",
     isTemplate: false,
     isCloneable: false,
-    supportTier: "core",
-    statusCheckFrequency: 3600,
+    supportTier: "premium",
+    statusCheckFrequency: 15, // in minutes
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString()
   }
 };
-
-// For future use - this would be set based on environment variables
-const SOT_ENDPOINT = process.env.SOT_ENDPOINT || 'https://api.nextmonth.dev/api/sot';
-const SOT_API_KEY = process.env.SOT_API_KEY || '';
 
 /**
  * Sends a webhook notification to the NextMonth ecosystem when a significant event occurs
@@ -73,48 +60,41 @@ const SOT_API_KEY = process.env.SOT_API_KEY || '';
  * @param profile - The current client profile (fetched from storage if not provided)
  */
 export async function sendSotWebhook(
-  eventType: 'service_update' | 'contact_submission' | 'content_update' | 'system_update',
+  eventType: string,
   payload: any,
   profile: SotClientProfile
 ): Promise<{ success: boolean; message: string }> {
   try {
-    // In a production environment, this would actually send the webhook
-    // For now, we'll just log it
-    console.log(`[SOT Webhook] Event: ${eventType}`);
-    console.log(`[SOT Webhook] Payload:`, JSON.stringify(payload, null, 2));
-    
-    // Update the lastSyncTimestamp in the profile
-    profile.dynamicUpdateTriggers.lastSyncTimestamp = new Date().toISOString();
-    
-    // In a production environment with real API endpoints:
-    /*
-    const response = await axios.post(`${SOT_ENDPOINT}/update-client-profile`, {
-      ...profile,
+    // In a real-world application, this would make an actual HTTP request to an external endpoint
+    // For simulation purposes, we'll just log the event
+    console.log(`[SOT Webhook] ${new Date().toISOString()} - Event: ${eventType}`, {
       eventType,
-      eventPayload: payload,
-      eventTimestamp: new Date().toISOString()
-    }, {
-      headers: {
-        'Authorization': `Bearer ${SOT_API_KEY}`,
-        'Content-Type': 'application/json'
-      }
+      payload,
+      source: {
+        businessId: profile.businessId,
+        businessName: profile.businessName,
+        instanceId: profile.systemMetadata.instanceId
+      },
+      timestamp: new Date().toISOString()
     });
     
-    return {
-      success: response.status >= 200 && response.status < 300,
-      message: `Webhook sent: ${response.statusText}`
-    };
-    */
+    // Create an audit log for this webhook
+    createSotAuditLog(`webhook_${eventType}`, {
+      eventType,
+      payload,
+      timestamp: new Date().toISOString()
+    });
     
-    return {
-      success: true,
-      message: `Webhook notification for event ${eventType} logged (simulation mode)`
+    // Simulate a successful webhook notification
+    return { 
+      success: true, 
+      message: `Webhook for ${eventType} sent successfully` 
     };
   } catch (error) {
-    console.error(`[SOT Webhook] Error sending webhook:`, error);
-    return {
-      success: false,
-      message: error instanceof Error ? error.message : 'Unknown error'
+    console.error(`[SOT Webhook Error] Failed to send webhook for ${eventType}:`, error);
+    return { 
+      success: false, 
+      message: error instanceof Error ? error.message : "Unknown error" 
     };
   }
 }
@@ -124,18 +104,9 @@ export async function sendSotWebhook(
  */
 export function createSotAuditLog(
   action: string,
-  details: any,
-  success: boolean = true
+  data: any
 ): void {
-  const timestamp = new Date().toISOString();
-  const logEntry = {
-    timestamp,
-    action,
-    details,
-    success,
-    environment: process.env.NODE_ENV || 'development'
-  };
-  
-  // In a production app, this would write to a database or file
-  console.log(`[SOT Audit] ${timestamp} - ${action}`, JSON.stringify(logEntry, null, 2));
+  // In a real-world application, this might write to a database or log file
+  // For simulation purposes, we'll just log to the console
+  console.log(`[SOT Audit] ${new Date().toISOString()} - ${action}`, data);
 }

@@ -27,6 +27,11 @@ const MobileMenu = ({ isOpen, onNavItemClick }: MobileMenuProps) => {
           path="#contact" 
           onClick={() => onNavItemClick("#contact")} 
         />
+        <MobileNavLink 
+          label="Admin" 
+          path="/admin/sot" 
+          onClick={() => onNavItemClick("/admin/sot")} 
+        />
       </div>
     </div>
   );

@@ -70,6 +70,12 @@ const NavBar = () => {
           <NavLink href="/#services" onClick={() => handleNavItemClick("#services")}>Services</NavLink>
           <NavLink href="/#about" onClick={() => handleNavItemClick("#about")}>About</NavLink>
           <NavLink href="/#contact" onClick={() => handleNavItemClick("#contact")}>Contact</NavLink>
+          <NavLink href="/admin/sot" onClick={() => handleNavItemClick("/admin/sot")}>
+            <span className="flex items-center">
+              <i className="bx bx-wrench mr-1"></i>
+              Admin
+            </span>
+          </NavLink>
         </nav>
       </div>
       
