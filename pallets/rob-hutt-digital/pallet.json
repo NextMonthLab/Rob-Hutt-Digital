@@ -1,0 +1,13 @@
+{
+  "name": "rob-hutt-digital",
+  "version": "1.0.0",
+  "type": "static-site",
+  "port": 5000,
+  "status": "scaffold",
+  "deployment": {
+    "entry": "index.html",
+    "docker": true,
+    "serve_script": true
+  },
+  "tags": ["agora", "pallet", "scaffold"]
+}
