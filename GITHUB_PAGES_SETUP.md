@@ -10,8 +10,9 @@
 ## Quick Start
 
 1. **Push to GitHub**: Upload this repository to GitHub
-2. **Enable Pages**: Go to Settings → Pages → Source: "GitHub Actions"
+2. **Automatic Setup**: The workflow will automatically create and configure GitHub Pages
 3. **Deploy**: Push to `main` branch triggers automatic deployment
+4. **Access Site**: After deployment completes, find your site URL in the Actions tab
 
 ## Repository Name Configuration
 
