@@ -1,0 +1,45 @@
+🔧 TASK: Convert this project into a reusable, generic visual template for use inside NextMonth Lab.
+
+🎯 OBJECTIVE:
+Preserve the existing layout, structure, and component logic, but strip away any custom content, brand identity, or personal references. This template should look fully designed but remain context-neutral so it can be reused for many businesses.
+
+✅ REQUIREMENTS:
+
+1. 🔁 Replace all custom content:
+   - Company name → “Your Business Name”
+   - Images → Placeholder stock images with alt tags (e.g. “Hero Image Placeholder”)
+   - Paragraph text → Role-specific placeholders (e.g. “This is your hero section...”)
+   - CTAs → Generic text like “Learn More” or “Get Started”
+
+2. 🧩 Maintain section semantics:
+   - Label all main layout sections clearly in comments (e.g. `// Hero Section`, `// About Us`, etc.)
+   - Ensure each section could be targeted individually via DOM class or ID
+
+3. 📁 Structure files clearly:
+   - Ensure main export is inside `pallet/` folder
+   - Use index.tsx or index.html as appropriate for the entry point
+   - Add a `template.json` file with the following metadata:
+     {
+       "templateName": "Digital Business Starter",
+       "category": "business-website",
+       "style": "professional",
+       "origin": "RobHutt Digital",
+       "description": "A modern single-page template designed for service-based businesses with a hero, about, features, and contact section."
+     }
+
+4. 🎨 Link components:
+   - If this template uses components from `nextmonth-components`, list them in the `template.json` under `"usesComponents"`  
+     Example: `"usesComponents": ["HeroSection", "ContactForm", "GallerySection"]`
+
+5. 🧪 Test readiness:
+   - Preview the site from inside Replit to confirm that layout renders correctly
+   - Export the preview as a static version that can be mounted in NextMonth Lab
+
+6. 🚫 Do NOT:
+   - Introduce new animations or framework changes
+   - Bundle images from external sources
+   - Rebrand the structure with any named company or portfolio content
+
+---
+
+Would you like me to now generate the follow-up **Prompt K: Deploy This Template to GitHub and Sync It to NextMonth Lab for Testing**?

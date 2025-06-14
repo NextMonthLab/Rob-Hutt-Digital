@@ -1,0 +1,35 @@
+{
+  "templateName": "Digital Business Starter",
+  "category": "business-website",
+  "style": "professional",
+  "origin": "RobHutt Digital",
+  "description": "A modern single-page template designed for service-based businesses with a hero, about, features, and contact section.",
+  "usesComponents": [
+    "HeroSection",
+    "ServiceCards", 
+    "HighlightCards",
+    "AboutSection",
+    "ContactForm",
+    "SkillsSection",
+    "NavBar",
+    "Footer",
+    "AdminInterface"
+  ],
+  "sections": [
+    "hero",
+    "services", 
+    "highlights",
+    "about",
+    "contact",
+    "admin"
+  ],
+  "features": [
+    "Responsive design",
+    "Contact form with validation",
+    "Service showcase",
+    "Skills visualization",
+    "Admin dashboard",
+    "SOT integration ready",
+    "Webhook notifications"
+  ]
+}
