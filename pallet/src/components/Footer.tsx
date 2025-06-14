@@ -1,65 +1,106 @@
+// Template registered for NextMonth Lab
+// Type: Business Website
+
+import React from "react";
 import { Link } from "wouter";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   return (
-    <footer className="bg-[#1e293b] text-white py-10">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-6 md:mb-0">
-            <div className="font-['Montserrat'] font-bold text-xl mb-2">Rob Hutt</div>
-            <p className="text-gray-400">Digital Strategy & Creative Execution</p>
+    <footer className="bg-gray-900 text-white">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid md:grid-cols-4 gap-8">
+          {/* Company Info */}
+          <div className="col-span-2">
+            <h3 className="text-xl font-bold mb-4">Your Business Name</h3>
+            <p className="text-gray-300 mb-4">
+              Professional services delivered with excellence. We help businesses 
+              achieve their goals through strategic planning and innovative solutions.
+            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                <i className="bx bxl-facebook text-xl"></i>
+              </a>
+              <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                <i className="bx bxl-twitter text-xl"></i>
+              </a>
+              <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                <i className="bx bxl-linkedin text-xl"></i>
+              </a>
+              <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                <i className="bx bxl-instagram text-xl"></i>
+              </a>
+            </div>
           </div>
-          
-          <div className="flex flex-col md:flex-row gap-4 md:gap-8">
-            <FooterLink href="/#home">Home</FooterLink>
-            <FooterLink href="/#services">Services</FooterLink>
-            <FooterLink href="/#about">About</FooterLink>
-            <FooterLink href="/#contact">Contact</FooterLink>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/" className="text-gray-300 hover:text-white transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="text-gray-300 hover:text-white transition-colors">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
+            <div className="space-y-2 text-gray-300">
+              <div className="flex items-center">
+                <i className="bx bx-envelope mr-2"></i>
+                <span>hello@yourbusiness.com</span>
+              </div>
+              <div className="flex items-center">
+                <i className="bx bx-phone mr-2"></i>
+                <span>+1 (555) 123-4567</span>
+              </div>
+              <div className="flex items-center">
+                <i className="bx bx-map mr-2"></i>
+                <span>123 Business St, Your City, ST 12345</span>
+              </div>
+            </div>
           </div>
         </div>
-        
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
-          <p>© {currentYear} Rob Hutt. All rights reserved. Powered by NextMonth.</p>
+
+        <div className="border-t border-gray-800 mt-8 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm">
+              © {currentYear} Your Business Name. All rights reserved.
+            </p>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+                Privacy Policy
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+                Terms of Service
+              </a>
+              <span className="text-gray-400 text-sm">
+                Powered by NextMonth Lab
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
-  );
-};
-
-type FooterLinkProps = {
-  href: string;
-  children: React.ReactNode;
-};
-
-const FooterLink = ({ href, children }: FooterLinkProps) => {
-  const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    
-    // If the link is to the home page, just set the hash
-    if (window.location.pathname !== "/" && href.startsWith("/#")) {
-      window.location.href = href;
-    } else if (href.startsWith("#")) {
-      window.location.hash = href;
-    } else {
-      window.location.href = href;
-    }
-    
-    // Scroll to the top if it's a non-hash link
-    if (!href.includes("#")) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  };
-  
-  return (
-    <a 
-      href={href} 
-      onClick={handleClick}
-      className="hover:text-[#1e3a8a] transition-colors"
-    >
-      {children}
-    </a>
   );
 };
 
