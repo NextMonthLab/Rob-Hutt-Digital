@@ -2,6 +2,8 @@
 
 ## Template Homepage Screenshot
 
+![Template Homepage](./template-homepage-screenshot.jpeg)
+
 The business site template homepage displays the following generic content:
 
 ### Header Navigation
