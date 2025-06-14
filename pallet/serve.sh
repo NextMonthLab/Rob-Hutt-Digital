@@ -3,7 +3,7 @@
 # Template registered for NextMonth Lab
 # Type: Business Website
 
-echo "Starting business-robhutt-digital template..."
+echo "Starting business-site-template..."
 
 # Install dependencies if node_modules doesn't exist
 if [ ! -d "node_modules" ]; then

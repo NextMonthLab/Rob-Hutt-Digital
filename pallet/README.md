@@ -1,4 +1,4 @@
-# business-robhutt-digital
+# Business Site Template
 
 A clean, professional business website template built for NextMonth Lab.
 
