@@ -13,10 +13,10 @@ const About = () => {
       transition={{ duration: 0.3 }}
     >
       <Helmet>
-        <title>About Rob Hutt | Digital Strategy & Creative Direction</title>
+        <title>About | Your Business</title>
         <meta 
           name="description" 
-          content="Learn about Rob Hutt's background, experience, and expertise in digital strategy, brand development, and creative direction."
+          content="Learn about our business background, experience, and expertise in professional services."
         />
       </Helmet>
       

@@ -52,7 +52,7 @@ const NavBar = () => {
           onClick={() => handleNavItemClick("/")}
           className="font-['Montserrat'] font-bold text-xl md:text-2xl text-[#1e3a8a] cursor-pointer"
         >
-          Rob Hutt
+          Your Business
         </div>
         
         {/* Mobile menu button */}

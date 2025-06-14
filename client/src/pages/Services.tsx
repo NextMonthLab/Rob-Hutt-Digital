@@ -12,10 +12,10 @@ const Services = () => {
       transition={{ duration: 0.3 }}
     >
       <Helmet>
-        <title>Services | Rob Hutt</title>
+        <title>Services | Your Business</title>
         <meta 
           name="description" 
-          content="Professional services offered by Rob Hutt including studio build & delivery, brand identity, marketing automation, video strategy, and PR support."
+          content="Professional services offered by our business team - customize this content with your specific service offerings."
         />
       </Helmet>
       

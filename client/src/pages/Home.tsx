@@ -16,10 +16,10 @@ const Home = () => {
       transition={{ duration: 0.3 }}
     >
       <Helmet>
-        <title>Rob Hutt | Digital Strategy & Creative Execution</title>
+        <title>Your Business | Professional Services</title>
         <meta 
           name="description" 
-          content="Rob Hutt - Brand builder. Automation specialist. Filmmaker. Professional digital strategy and creative execution services."
+          content="Professional business services template - customize with your brand and service offerings."
         />
       </Helmet>
       

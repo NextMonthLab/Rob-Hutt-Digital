@@ -11,10 +11,10 @@ const Contact = () => {
       transition={{ duration: 0.3 }}
     >
       <Helmet>
-        <title>Contact | Rob Hutt</title>
+        <title>Contact | Your Business</title>
         <meta 
           name="description" 
-          content="Get in touch with Rob Hutt for digital strategy, brand development, marketing automation, and creative direction services."
+          content="Get in touch with our business team for professional services and consultation."
         />
       </Helmet>
       
