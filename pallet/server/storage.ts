@@ -95,6 +95,7 @@ export class MemStorage implements IStorage {
     this.users = new Map();
     this.services = new Map();
     this.highlightCards = new Map();
+    this.about = undefined;
     this.contactSubmissions = new Map();
     this.sotClientProfile = null;
     
@@ -103,7 +104,7 @@ export class MemStorage implements IStorage {
     this.highlightCardCurrentId = 1;
     this.contactSubmissionCurrentId = 1;
     
-    // Initialize with template data
+    // Force initialize with generic template data immediately
     this.initializeTemplateData();
   }
 
@@ -265,7 +266,53 @@ export class MemStorage implements IStorage {
   
   // Service methods
   async getServices(): Promise<Service[]> {
-    return Array.from(this.services.values());
+    const services = Array.from(this.services.values());
+    // Force return generic template services if empty
+    if (services.length === 0) {
+      const templateServices = [
+        {
+          id: 1,
+          title: "Service Name 1",
+          type: "service",
+          tag: "popular",
+          icon: "bx-briefcase",
+          description: "Brief description of what this service includes and how it benefits your clients. Customize this text to match your business offerings.",
+          detailUrl: "#services",
+          automation: "enabled",
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString()
+        },
+        {
+          id: 2,
+          title: "Service Name 2",
+          type: "service",
+          tag: "featured",
+          icon: "bx-trending-up",
+          description: "Brief description of what this service includes and how it benefits your clients. Customize this text to match your business offerings.",
+          detailUrl: "#services",
+          automation: "partial",
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString()
+        },
+        {
+          id: 3,
+          title: "Service Name 3",
+          type: "service",
+          tag: "premium",
+          icon: "bx-cog",
+          description: "Brief description of what this service includes and how it benefits your clients. Customize this text to match your business offerings.",
+          detailUrl: "#services",
+          automation: null,
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString()
+        }
+      ];
+      templateServices.forEach(service => {
+        this.services.set(service.id, service);
+      });
+      return templateServices;
+    }
+    return services;
   }
   
   async getService(id: number): Promise<Service | undefined> {
@@ -274,11 +321,98 @@ export class MemStorage implements IStorage {
   
   // HighlightCard methods
   async getHighlightCards(): Promise<HighlightCard[]> {
-    return Array.from(this.highlightCards.values());
+    const cards = Array.from(this.highlightCards.values());
+    // Force return generic template cards if empty
+    if (cards.length === 0) {
+      const templateCards = [
+        {
+          id: 1,
+          type: "highlight",
+          title: "Strategic Excellence",
+          tag: null,
+          icon: "bx-rocket",
+          description: "Proven track record of delivering results that exceed expectations and drive business growth.",
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString()
+        },
+        {
+          id: 2,
+          type: "highlight",
+          title: "Trusted Partnership",
+          tag: null,
+          icon: "bx-shield-check",
+          description: "Building long-term relationships based on transparency, reliability, and consistent performance.",
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString()
+        },
+        {
+          id: 3,
+          type: "highlight",
+          title: "Innovation Focus",
+          tag: null,
+          icon: "bx-trending-up",
+          description: "Staying ahead of industry trends to deliver cutting-edge solutions that give you competitive advantage.",
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString()
+        },
+        {
+          id: 4,
+          type: "highlight",
+          title: "Efficient Delivery",
+          tag: null,
+          icon: "bx-time",
+          description: "Streamlined processes and clear communication ensure projects are completed on time and within budget.",
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString()
+        }
+      ];
+      templateCards.forEach(card => {
+        this.highlightCards.set(card.id, card);
+      });
+      return templateCards;
+    }
+    return cards;
   }
   
   // About methods
   async getAbout(): Promise<About | undefined> {
+    // Force return generic template about if undefined
+    if (!this.about) {
+      this.about = {
+        id: 1,
+        type: "about",
+        title: "About",
+        tag: null,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+        content: {
+          bio: [
+            "Professional with extensive experience in business strategy and client solutions. Passionate about helping businesses grow and succeed through innovative approaches.",
+            "Dedicated to delivering exceptional results and building lasting relationships with clients across various industries.",
+            "Committed to staying ahead of industry trends and continuously improving service offerings to meet evolving market needs."
+          ],
+          credentials: [
+            "Industry Certification - Business Strategy",
+            "Professional Development Certificate",
+            "Featured Speaker at Industry Conference"
+          ],
+          quote: "Success comes from understanding client needs and delivering solutions that exceed expectations.",
+          skills: {
+            creativeSkills: [
+              { name: "Strategic Planning", level: 95 },
+              { name: "Creative Problem Solving", level: 90 },
+              { name: "Client Communication", level: 95 }
+            ],
+            technicalSkills: [
+              { name: "Business Analysis", level: 90 },
+              { name: "Process Optimization", level: 85 },
+              { name: "Project Management", level: 95 }
+            ]
+          }
+        },
+        profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+      };
+    }
     return this.about;
   }
   
