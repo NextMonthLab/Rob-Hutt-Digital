@@ -1,23 +1,7 @@
 {
   "name": "business-site-template",
-  "description": "A clean, professional business website template built for NextMonth Lab.",
-  "version": "1.0.0",
-  "type": "business-website",
-  "category": "business",
+  "type": "fullstack",
   "port": 5000,
-  "status": "ready",
-  "deployment": {
-    "entry": "index.html",
-    "docker": true,
-    "serve_script": true
-  },
-  "features": [
-    "Responsive design",
-    "Contact forms", 
-    "Service showcase",
-    "About section",
-    "NextMonth SOT integration",
-    "Admin dashboard"
-  ],
-  "tags": ["business", "professional", "nextmonth", "template"]
+  "tags": ["template", "starter", "business", "clean"],
+  "description": "A ready-to-customize starter website for service businesses. Includes home, about, services, contact, and not-found pages."
 }

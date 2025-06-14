@@ -1,0 +1,77 @@
+📦 Palletizer Prompt: `business-site-template`
+
+You are now finalizing this project as a **generic business website template** for use inside the NextMonth Lab template selector. This template will be offered as a clean, professional starting point for users building service-oriented websites.
+
+Your goal is to **fully prepare this Replit project** to be:
+
+- Compatible with NextMonth Lab’s GitHub sync
+- Instantly usable as a complete starter
+- Free of personal or brand-specific content
+- Discoverable with metadata and visual previews
+
+---
+
+### ✅ Required Structure (inside `/pallet/`)
+
+1. **Create a `/pallet/` directory at project root.**
+2. Inside `/pallet/`, add the following:
+
+#### `pallet.json`
+```json
+{
+  "name": "business-site-template",
+  "type": "fullstack",
+  "port": 5000,
+  "tags": ["template", "starter", "business", "clean"],
+  "description": "A ready-to-customize starter website for service businesses. Includes home, about, services, contact, and not-found pages."
+}
+```
+
+#### `serve.sh`
+```bash
+#!/bin/bash
+npm install
+npm run build
+npm run preview
+```
+
+#### `README.md`
+```md
+# Business Site Template
+
+A clean, professional website template for businesses. Includes fully scaffolded pages, reusable components, and neutral placeholder content.
+
+## Pages Included
+- Home
+- About
+- Services
+- Contact
+- Not Found
+
+## Features
+- Responsive layout
+- Componentized sections
+- Placeholder copy and images
+- Ready for AI-assisted customization
+
+## How to Use
+- Replace placeholder sections with your own content
+- Or connect to the Dev & Design Team for guided refinement
+```
+
+---
+
+### ✅ Final Checks
+
+Before pushing to GitHub, confirm the following:
+
+- [ ] ✅ No personal content (e.g., "Rob Hutt", logos, bios) remains anywhere
+- [ ] ✅ All pages load without 404 or missing components
+- [ ] ✅ Component references and data schemas are aligned
+- [ ] ✅ Preview works via both `npm run dev` and `serve.sh`
+- [ ] ✅ Repo is renamed to: `business-site-template`
+- [ ] ✅ GitHub visibility is **Public**
+
+---
+
+Once pushed, this template will be available for selection inside NextMonth Lab under the “Business Website” category and can be customized via Claude and the Dev & Design Team workflow.

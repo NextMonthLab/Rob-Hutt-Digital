@@ -1,8 +1,8 @@
-# Rob Hutt Digital - Personal Brand Web Application
+# Business Site Template - Generic Business Web Application
 
 ## Overview
 
-Rob Hutt Digital is a modern personal brand web application built for showcasing digital strategy and creative execution services. The application serves as both a professional portfolio and business website, featuring integration with the NextMonth Developer ecosystem as an official Council Member. It provides a complete platform for content management, client engagement, and business automation.
+Business Site Template is a generic, professional web application template designed for service-oriented businesses. Originally based on Rob Hutt Digital, this template has been completely converted to provide neutral, customizable placeholder content suitable for any business. The application maintains NextMonth ecosystem integration while serving as a reusable template for NextMonth Lab.
 
 ## System Architecture
 
@@ -115,7 +115,14 @@ Rob Hutt Digital is a modern personal brand web application built for showcasing
 
 ```
 Changelog:
-- June 14, 2025. Initial setup
+- June 14, 2025. Initial setup as Rob Hutt Digital personal brand
+- June 14, 2025. Converted to generic business template
+  - Replaced all personal branding with placeholder content
+  - Updated template name to "business-site-template"
+  - Implemented generic services ("Service Name 1", "Service Name 2", etc.)
+  - Updated storage system with generic business data
+  - Fixed frontend components for template compatibility
+  - Prepared for NextMonth Lab integration
 ```
 
 ## User Preferences
