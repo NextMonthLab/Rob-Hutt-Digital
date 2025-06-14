@@ -4,11 +4,11 @@ import { Service, HighlightCard, About } from "../shared/schema";
 export const templateServices: Service[] = [
   {
     id: 1,
-    title: "Digital Marketing",
-    type: "marketing",
+    title: "Service Name 1",
+    type: "service",
     tag: "popular",
-    icon: "bx-broadcast",
-    description: "Comprehensive digital marketing strategies to grow your online presence and reach your target audience effectively.",
+    icon: "bx-briefcase",
+    description: "Brief description of what this service includes and how it benefits your clients. Customize this text to match your business offerings.",
     detailUrl: "#services",
     automation: "enabled",
     createdAt: new Date().toISOString(),
@@ -16,11 +16,11 @@ export const templateServices: Service[] = [
   },
   {
     id: 2,
-    title: "Content Creation",
-    type: "creative",
+    title: "Service Name 2",
+    type: "service",
     tag: "featured",
-    icon: "bx-video",
-    description: "Professional content creation services including video production, copywriting, and visual design.",
+    icon: "bx-trending-up",
+    description: "Brief description of what this service includes and how it benefits your clients. Customize this text to match your business offerings.",
     detailUrl: "#services",
     automation: "partial",
     createdAt: new Date().toISOString(),
@@ -28,11 +28,11 @@ export const templateServices: Service[] = [
   },
   {
     id: 3,
-    title: "Business Consulting",
-    type: "consulting",
+    title: "Service Name 3",
+    type: "service",
     tag: "premium",
-    icon: "bx-line-chart",
-    description: "Strategic business consulting to help you make informed decisions and optimize your operations.",
+    icon: "bx-cog",
+    description: "Brief description of what this service includes and how it benefits your clients. Customize this text to match your business offerings.",
     detailUrl: "#services",
     automation: null,
     createdAt: new Date().toISOString(),
@@ -40,11 +40,11 @@ export const templateServices: Service[] = [
   },
   {
     id: 4,
-    title: "Process Automation",
-    type: "technical",
+    title: "Service Name 4",
+    type: "service",
     tag: "efficiency",
-    icon: "bx-cog",
-    description: "Streamline your business processes with custom automation solutions that save time and reduce errors.",
+    icon: "bx-support",
+    description: "Brief description of what this service includes and how it benefits your clients. Customize this text to match your business offerings.",
     detailUrl: "#services",
     automation: "enabled",
     createdAt: new Date().toISOString(),
@@ -104,29 +104,29 @@ export const templateAbout: About = {
   tag: null,
   content: {
     bio: [
-      "Welcome to our business! We are dedicated to providing exceptional services that help our clients achieve their goals.",
-      "With years of experience in the industry, we have developed a deep understanding of what it takes to succeed in today's competitive marketplace.",
-      "Our team combines creativity, technical expertise, and strategic thinking to deliver solutions that make a real difference."
+      "Tell your brand story here. Replace this with information about your business, mission, and what makes you unique in your industry.",
+      "Share your journey, experience, and the values that drive your work. This is where potential clients learn who you are and why they should choose you.",
+      "Highlight your expertise, achievements, and the passion that fuels your business success."
     ],
     credentials: [
-      "Industry Certified Professional",
-      "Years of Experience in Field",
-      "Award-Winning Service Provider",
-      "Trusted by Leading Companies"
+      "Add Your Certification Here",
+      "Years of Experience in Your Field",
+      "Your Awards or Recognition",
+      "Notable Client Achievements"
     ],
-    quote: "Success is not just about what you accomplish in your life, it's about what you inspire others to do.",
+    quote: "Add an inspiring quote that represents your business philosophy or mission statement.",
     skills: {
       creativeSkills: [
-        { name: "Creative Strategy", level: 95 },
-        { name: "Brand Development", level: 90 },
-        { name: "Content Creation", level: 88 },
-        { name: "Visual Design", level: 85 }
+        { name: "Your Skill 1", level: 95 },
+        { name: "Your Skill 2", level: 90 },
+        { name: "Your Skill 3", level: 88 },
+        { name: "Your Skill 4", level: 85 }
       ],
       technicalSkills: [
-        { name: "Digital Marketing", level: 92 },
-        { name: "Analytics & Data", level: 88 },
-        { name: "Process Automation", level: 90 },
-        { name: "Project Management", level: 95 }
+        { name: "Your Technical Skill 1", level: 92 },
+        { name: "Your Technical Skill 2", level: 88 },
+        { name: "Your Technical Skill 3", level: 90 },
+        { name: "Your Technical Skill 4", level: 95 }
       ]
     }
   },

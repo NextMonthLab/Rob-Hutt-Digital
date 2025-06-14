@@ -39,7 +39,7 @@ const Hero = ({
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                Book a 15-minute intro call
+                Book a Free Consultation
               </motion.div>
               
               <motion.div 
@@ -50,7 +50,7 @@ const Hero = ({
                   document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                View my services
+                View Our Services
               </motion.div>
             </div>
           </motion.div>
@@ -64,7 +64,7 @@ const Hero = ({
             <div className="relative rounded-lg overflow-hidden shadow-xl">
               <img 
                 src={profileImage}
-                alt="Rob Hutt - Professional portrait" 
+                alt="Your Business - Upload your own image" 
                 className="w-full h-auto rounded-lg"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
