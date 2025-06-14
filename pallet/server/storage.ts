@@ -106,6 +106,7 @@ export class MemStorage implements IStorage {
     
     // Force initialize with generic template data immediately
     this.initializeTemplateData();
+    console.log('Storage initialized with template data');
   }
 
   private initializeTemplateData() {
@@ -266,52 +267,9 @@ export class MemStorage implements IStorage {
   
   // Service methods
   async getServices(): Promise<Service[]> {
+    console.log('getServices called, current services count:', this.services.size);
     const services = Array.from(this.services.values());
-    // Force return generic template services if empty
-    if (services.length === 0) {
-      const templateServices = [
-        {
-          id: 1,
-          title: "Service Name 1",
-          type: "service",
-          tag: "popular",
-          icon: "bx-briefcase",
-          description: "Brief description of what this service includes and how it benefits your clients. Customize this text to match your business offerings.",
-          detailUrl: "#services",
-          automation: "enabled",
-          createdAt: new Date().toISOString(),
-          updatedAt: new Date().toISOString()
-        },
-        {
-          id: 2,
-          title: "Service Name 2",
-          type: "service",
-          tag: "featured",
-          icon: "bx-trending-up",
-          description: "Brief description of what this service includes and how it benefits your clients. Customize this text to match your business offerings.",
-          detailUrl: "#services",
-          automation: "partial",
-          createdAt: new Date().toISOString(),
-          updatedAt: new Date().toISOString()
-        },
-        {
-          id: 3,
-          title: "Service Name 3",
-          type: "service",
-          tag: "premium",
-          icon: "bx-cog",
-          description: "Brief description of what this service includes and how it benefits your clients. Customize this text to match your business offerings.",
-          detailUrl: "#services",
-          automation: null,
-          createdAt: new Date().toISOString(),
-          updatedAt: new Date().toISOString()
-        }
-      ];
-      templateServices.forEach(service => {
-        this.services.set(service.id, service);
-      });
-      return templateServices;
-    }
+    console.log('Current services:', services.map(s => s.title));
     return services;
   }
   
@@ -321,8 +279,9 @@ export class MemStorage implements IStorage {
   
   // HighlightCard methods
   async getHighlightCards(): Promise<HighlightCard[]> {
+    // Force clear and reload with generic template cards
+    this.highlightCards.clear();
     const cards = Array.from(this.highlightCards.values());
-    // Force return generic template cards if empty
     if (cards.length === 0) {
       const templateCards = [
         {
@@ -372,6 +331,10 @@ export class MemStorage implements IStorage {
       return templateCards;
     }
     return cards;
+  }
+  
+  async getHighlightCard(id: number): Promise<HighlightCard | undefined> {
+    return this.highlightCards.get(id);
   }
   
   // About methods
