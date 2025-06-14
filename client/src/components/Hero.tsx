@@ -9,9 +9,9 @@ type HeroProps = {
 };
 
 const Hero = ({ 
-  title = "Digital Strategy & Creative Execution",
-  tagline = "Brand builder. Automation specialist. Filmmaker.",
-  profileImage = "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+  title = "Professional Business Services",
+  tagline = "Quality service provider. Customer focused. Results driven.",
+  profileImage = "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80"
 }: HeroProps) => {
   
   return (
@@ -39,7 +39,7 @@ const Hero = ({
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                Book a 15-minute intro call
+                Get Started Today
               </motion.div>
               
               <motion.div 
@@ -50,7 +50,7 @@ const Hero = ({
                   document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                View my services
+                View Our Services
               </motion.div>
             </div>
           </motion.div>
@@ -64,7 +64,7 @@ const Hero = ({
             <div className="relative rounded-lg overflow-hidden shadow-xl">
               <img 
                 src={profileImage}
-                alt="Rob Hutt - Professional portrait" 
+                alt="Professional business team" 
                 className="w-full h-auto rounded-lg"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
