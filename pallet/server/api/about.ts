@@ -11,27 +11,30 @@ export function aboutRoutes(router: Router) {
         // Return default about data if none found
         return res.json({
           bio: [
-            "With over 15 years of experience in digital strategy and creative direction, I've helped brands across multiple industries strengthen their digital presence and streamline their operations.",
-            "My background spans award-winning filmmaking, marketing automation, and brand development—giving me a unique perspective that bridges creative vision with technical execution.",
-            "I believe in simplifying the complex, removing bottlenecks, and delivering solutions that not only look great but perform exceptionally well."
+            "Tell your brand story here. Replace this with information about your business, mission, and what makes you unique in your industry.",
+            "Share your journey, experience, and the values that drive your work. This is where potential clients learn who you are and why they should choose you.",
+            "Highlight your expertise, achievements, and the passion that fuels your business success."
           ],
           credentials: [
-            "Royal Television Society Award - Documentary Direction",
-            "Certified Marketing Automation Specialist",
-            "Featured in Creative Quarterly, \"Digital Innovators\""
+            "Add Your Certification Here",
+            "Years of Experience in Your Field",
+            "Your Awards or Recognition",
+            "Notable Client Achievements"
           ],
-          quote: "I'm passionate about helping people translate their vision into reality. Technology should simplify, not complicate.",
-          profileImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+          quote: "Add an inspiring quote that represents your business philosophy or mission statement.",
+          profileImage: "https://via.placeholder.com/400x400?text=Upload+Your+Business+Image",
           skills: {
             creativeSkills: [
-              { name: "Brand Strategy", level: 95 },
-              { name: "Visual Direction", level: 90 },
-              { name: "Storytelling", level: 95 }
+              { name: "Your Skill 1", level: 95 },
+              { name: "Your Skill 2", level: 90 },
+              { name: "Your Skill 3", level: 88 },
+              { name: "Your Skill 4", level: 85 }
             ],
             technicalSkills: [
-              { name: "Automation Design", level: 90 },
-              { name: "Studio Engineering", level: 85 },
-              { name: "Marketing Systems", level: 95 }
+              { name: "Your Technical Skill 1", level: 92 },
+              { name: "Your Technical Skill 2", level: 88 },
+              { name: "Your Technical Skill 3", level: 90 },
+              { name: "Your Technical Skill 4", level: 95 }
             ]
           }
         });

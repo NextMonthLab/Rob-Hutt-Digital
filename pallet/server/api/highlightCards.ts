@@ -13,20 +13,26 @@ export function highlightCardsRoutes(router: Router) {
           {
             id: 1,
             icon: "bx-rocket",
-            title: "Strategic Vision",
-            description: "I transform complex ideas into clear, actionable digital strategies that deliver results."
+            title: "Strategic Approach",
+            description: "We develop comprehensive strategies tailored to your specific business goals and market position."
           },
           {
             id: 2,
-            icon: "bx-bulb",
-            title: "Creative Direction",
-            description: "Award-winning creative expertise to help your brand stand out in today's crowded marketplace."
+            icon: "bx-trophy",
+            title: "Proven Results",
+            description: "Our track record speaks for itself with measurable results and satisfied clients across various industries."
           },
           {
             id: 3,
-            icon: "bx-cog",
-            title: "Technical Execution",
-            description: "I bridge the gap between creative vision and technical implementation for seamless delivery."
+            icon: "bx-group",
+            title: "Expert Team",
+            description: "Work with experienced professionals who understand your industry and bring years of expertise to your project."
+          },
+          {
+            id: 4,
+            icon: "bx-time-five",
+            title: "Timely Delivery",
+            description: "We respect your timeline and deliver quality work on schedule, keeping your projects moving forward."
           }
         ]);
       }
