@@ -234,6 +234,9 @@ export class MemStorage implements IStorage {
     });
 
     this.about = templateAbout;
+    
+    console.log('Storage initialized with services:', templateServices.map(s => s.title));
+    console.log('Storage size after init:', this.services.size);
   }
 
   async getUser(id: number): Promise<User | undefined> {
