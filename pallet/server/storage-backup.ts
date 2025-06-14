@@ -1,3 +1,4 @@
+// Backup of working storage implementation
 import { 
   User, InsertUser, 
   Service, InsertService, 
@@ -56,15 +57,26 @@ export type SotClientProfile = {
 };
 
 export interface IStorage {
+  // User methods
   getUser(id: number): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
+  
+  // Service methods
   getServices(): Promise<Service[]>;
   getService(id: number): Promise<Service | undefined>;
+  
+  // HighlightCard methods
   getHighlightCards(): Promise<HighlightCard[]>;
   getHighlightCard(id: number): Promise<HighlightCard | undefined>;
+  
+  // About methods
   getAbout(): Promise<About | undefined>;
+  
+  // Contact methods
   createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission>;
+  
+  // SOT integration methods
   updateSotClientProfile(profile: SotClientProfile): Promise<SotClientProfile>;
   getSotClientProfile(): Promise<SotClientProfile | null>;
 }
@@ -95,10 +107,12 @@ export class MemStorage implements IStorage {
     this.highlightCardCurrentId = 1;
     this.contactSubmissionCurrentId = 1;
     
+    // Initialize with generic template data immediately
     this.initializeGenericTemplateData();
   }
 
   private initializeGenericTemplateData() {
+    // Generic business services
     const templateServices: Service[] = [
       {
         id: 1,
@@ -114,7 +128,7 @@ export class MemStorage implements IStorage {
       },
       {
         id: 2,
-        title: "Service Name 2",
+        title: "Service Name 2", 
         type: "service",
         tag: "featured",
         icon: "bx-trending-up",
@@ -127,7 +141,7 @@ export class MemStorage implements IStorage {
       {
         id: 3,
         title: "Service Name 3",
-        type: "service",
+        type: "service", 
         tag: "premium",
         icon: "bx-cog",
         description: "Brief description of what this service includes and how it benefits your clients. Customize this text to match your business offerings.",
@@ -138,6 +152,7 @@ export class MemStorage implements IStorage {
       }
     ];
 
+    // Generic business highlight cards
     const templateHighlightCards: HighlightCard[] = [
       {
         id: 1,
@@ -154,7 +169,7 @@ export class MemStorage implements IStorage {
         type: "highlight",
         title: "Trusted Partnership",
         tag: null,
-        icon: "bx-shield-check",
+        icon: "bx-shield-check", 
         description: "Building long-term relationships based on transparency, reliability, and consistent performance.",
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString()
@@ -171,7 +186,7 @@ export class MemStorage implements IStorage {
       },
       {
         id: 4,
-        type: "highlight",
+        type: "highlight", 
         title: "Efficient Delivery",
         tag: null,
         icon: "bx-time",
@@ -181,10 +196,11 @@ export class MemStorage implements IStorage {
       }
     ];
 
+    // Generic business about
     const templateAbout: About = {
       id: 1,
       type: "about",
-      title: "About Our Business",
+      title: "About Our Business", 
       tag: null,
       content: {
         bio: [
@@ -194,7 +210,7 @@ export class MemStorage implements IStorage {
         ],
         credentials: [
           "Industry Certification - Business Strategy",
-          "Professional Development Certificate",
+          "Professional Development Certificate", 
           "Featured Speaker at Industry Conference"
         ],
         quote: "Success comes from understanding client needs and delivering solutions that exceed expectations.",
@@ -216,6 +232,7 @@ export class MemStorage implements IStorage {
       updatedAt: new Date().toISOString()
     };
 
+    // Initialize storage with template data
     templateServices.forEach(service => {
       this.services.set(service.id, service);
       this.serviceCurrentId = Math.max(this.serviceCurrentId, service.id + 1);
@@ -227,14 +244,17 @@ export class MemStorage implements IStorage {
     });
 
     this.about = templateAbout;
+    
+    console.log('Generic template data initialized successfully');
   }
 
+  // User methods
   async getUser(id: number): Promise<User | undefined> {
     return this.users.get(id);
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    for (const user of Array.from(this.users.values())) {
+    for (const user of this.users.values()) {
       if (user.username === username) {
         return user;
       }
@@ -249,6 +269,7 @@ export class MemStorage implements IStorage {
     return user;
   }
   
+  // Service methods
   async getServices(): Promise<Service[]> {
     return Array.from(this.services.values());
   }
@@ -257,6 +278,7 @@ export class MemStorage implements IStorage {
     return this.services.get(id);
   }
   
+  // HighlightCard methods
   async getHighlightCards(): Promise<HighlightCard[]> {
     return Array.from(this.highlightCards.values());
   }
@@ -265,10 +287,12 @@ export class MemStorage implements IStorage {
     return this.highlightCards.get(id);
   }
   
+  // About methods
   async getAbout(): Promise<About | undefined> {
     return this.about;
   }
   
+  // Contact methods
   async createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission> {
     const id = this.contactSubmissionCurrentId++;
     const timestamp = new Date().toISOString();
@@ -283,10 +307,12 @@ export class MemStorage implements IStorage {
     return contactSubmission;
   }
   
+  // SOT integration methods
   async updateSotClientProfile(profile: SotClientProfile): Promise<SotClientProfile> {
     this.sotClientProfile = profile;
     console.log(`SOT Client Profile updated: ${profile.businessId}`);
     
+    // Update timestamps
     this.sotClientProfile.systemMetadata.updatedAt = new Date().toISOString();
     this.sotClientProfile.dynamicUpdateTriggers.lastSyncTimestamp = new Date().toISOString();
     
