@@ -12,33 +12,21 @@ export function servicesRoutes(router: Router) {
         return res.json([
           {
             id: 1,
-            icon: "bx-broadcast",
-            title: "Studio Build & Delivery",
-            description: "I design and deliver YouTube and podcast studios—customised to your brand and operational within two weeks."
+            icon: "bx-briefcase",
+            title: "Service Name 1",
+            description: "Brief description of what this service includes and how it benefits your clients. Customize this text to match your business offerings."
           },
           {
             id: 2,
-            icon: "bx-palette",
-            title: "Brand Identity & Development",
-            description: "From brand refresh to full rebrand, I handle design, messaging, and execution."
+            icon: "bx-trending-up",
+            title: "Service Name 2",
+            description: "Brief description of what this service includes and how it benefits your clients. Customize this text to match your business offerings."
           },
           {
             id: 3,
             icon: "bx-cog",
-            title: "Marketing Automation",
-            description: "I streamline your digital marketing by removing bottlenecks, replacing them with smooth automation."
-          },
-          {
-            id: 4,
-            icon: "bx-movie-play",
-            title: "Video Strategy & Direction",
-            description: "As an award-winning filmmaker, I help bring clarity and story to your video brand."
-          },
-          {
-            id: 5,
-            icon: "bx-news",
-            title: "Press & PR Support",
-            description: "From press releases to high-impact positioning—I help you get seen, shared, and remembered."
+            title: "Service Name 3",
+            description: "Brief description of what this service includes and how it benefits your clients. Customize this text to match your business offerings."
           }
         ]);
       }
