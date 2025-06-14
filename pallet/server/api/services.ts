@@ -6,6 +6,8 @@ export function servicesRoutes(router: Router) {
   router.get("/services", async (req, res) => {
     try {
       const services = await storage.getServices();
+      console.log('API services endpoint - services returned:', services?.length, 'items');
+      console.log('First service title:', services?.[0]?.title);
       
       if (!services || services.length === 0) {
         // Return default services if none found

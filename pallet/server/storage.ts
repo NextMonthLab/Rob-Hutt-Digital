@@ -310,4 +310,5 @@ export class MemStorage implements IStorage {
   }
 }
 
+// Force create new storage instance to clear any cached data
 export const storage = new MemStorage();
