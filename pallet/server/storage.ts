@@ -99,6 +99,13 @@ export class MemStorage implements IStorage {
   }
 
   private initializeGenericTemplateData() {
+    // Force clear any existing data first
+    this.services.clear();
+    this.highlightCards.clear();
+    this.about = undefined;
+    
+    console.log('Initializing with generic template data...');
+    
     const templateServices: Service[] = [
       {
         id: 1,
@@ -250,7 +257,9 @@ export class MemStorage implements IStorage {
   }
   
   async getServices(): Promise<Service[]> {
-    return Array.from(this.services.values());
+    const services = Array.from(this.services.values());
+    console.log('Storage getServices returning:', services.map(s => ({ id: s.id, title: s.title })));
+    return services;
   }
   
   async getService(id: number): Promise<Service | undefined> {
