@@ -105,11 +105,18 @@ export class MemStorage implements IStorage {
     this.highlightCards.clear();
     this.about = undefined;
     
-    console.log('Initializing with imported generic template data...');
+    console.log('=== STORAGE INITIALIZATION DEBUG ===');
+    console.log('Clearing existing data and initializing with template data...');
     
-    // Import from template-data.ts instead of hardcoding
-    const { templateServices, templateHighlightCards, templateAbout } = require('./template-data');
-    console.log('Loaded template services:', templateServices.map((s: any) => s.title));
+    try {
+      // Import from template-data.ts instead of hardcoding
+      const templateDataModule = require('./template-data');
+      console.log('Template module keys:', Object.keys(templateDataModule));
+      
+      const { templateServices, templateHighlightCards, templateAbout } = templateDataModule;
+      console.log('Template services loaded:', templateServices?.length || 0, 'items');
+      console.log('First template service:', templateServices?.[0]?.title);
+      console.log('All template service titles:', templateServices?.map((s: any) => s.title) || []);
 
     // Initialize services from template data
     templateServices.forEach((service: Service) => {
