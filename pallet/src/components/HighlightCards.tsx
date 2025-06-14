@@ -51,7 +51,7 @@ const HighlightCards = () => {
     }
   ];
 
-  const displayHighlights = highlights || fallbackHighlights;
+  const displayHighlights = (highlights as any[]) || fallbackHighlights;
 
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -26,7 +26,7 @@ const AboutSection = () => {
     );
   }
 
-  const content = about?.content || {
+  const content = (about as any)?.content || {
     bio: [
       "We are a dedicated team of professionals committed to delivering exceptional results for our clients.",
       "With years of experience in our field, we understand what it takes to succeed in today's competitive marketplace.",
