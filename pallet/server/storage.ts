@@ -118,22 +118,87 @@ export class MemStorage implements IStorage {
       console.log('First template service:', templateServices?.[0]?.title);
       console.log('All template service titles:', templateServices?.map((s: any) => s.title) || []);
 
-    // Initialize services from template data
-    templateServices.forEach((service: Service) => {
+      // Initialize services from template data
+      if (templateServices && templateServices.length > 0) {
+        templateServices.forEach((service: Service) => {
+          this.services.set(service.id, service);
+          console.log('Added service:', service.title);
+        });
+        this.serviceCurrentId = templateServices.length;
+      } else {
+        console.error('No template services found!');
+      }
+
+      // Initialize highlight cards from template data
+      if (templateHighlightCards && templateHighlightCards.length > 0) {
+        templateHighlightCards.forEach((card: HighlightCard) => {
+          this.highlightCards.set(card.id, card);
+        });
+        this.highlightCardCurrentId = templateHighlightCards.length;
+      }
+
+      // Initialize about from template data
+      if (templateAbout) {
+        this.about = templateAbout;
+      }
+
+      console.log('Generic template data initialized successfully');
+      console.log('Final services count:', this.services.size);
+      console.log('Final services titles:', Array.from(this.services.values()).map(s => s.title));
+    } catch (error) {
+      console.error('Failed to load template data:', error);
+      console.log('Falling back to hardcoded generic data...');
+      this.initializeFallbackData();
+    }
+  }
+
+  private initializeFallbackData() {
+    // Hardcoded fallback generic data
+    const fallbackServices: Service[] = [
+      {
+        id: 1,
+        title: "Service Name 1",
+        type: "service",
+        tag: "popular",
+        icon: "bx-briefcase",
+        description: "Brief description of what this service includes and how it benefits your clients. Customize this text to match your business offerings.",
+        detailUrl: "#services",
+        automation: "enabled",
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      },
+      {
+        id: 2,
+        title: "Service Name 2",
+        type: "service",
+        tag: "featured",
+        icon: "bx-trending-up",
+        description: "Brief description of what this service includes and how it benefits your clients. Customize this text to match your business offerings.",
+        detailUrl: "#services",
+        automation: "partial",
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      },
+      {
+        id: 3,
+        title: "Service Name 3",
+        type: "service",
+        tag: "premium",
+        icon: "bx-cog",
+        description: "Brief description of what this service includes and how it benefits your clients. Customize this text to match your business offerings.",
+        detailUrl: "#services",
+        automation: null,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      }
+    ];
+
+    fallbackServices.forEach(service => {
       this.services.set(service.id, service);
     });
-    this.serviceCurrentId = templateServices.length;
+    this.serviceCurrentId = fallbackServices.length;
 
-    // Initialize highlight cards from template data
-    templateHighlightCards.forEach((card: HighlightCard) => {
-      this.highlightCards.set(card.id, card);
-    });
-    this.highlightCardCurrentId = templateHighlightCards.length;
-
-    // Initialize about from template data
-    this.about = templateAbout;
-
-    console.log('Generic template data initialized successfully');
+    console.log('Fallback data initialized with', fallbackServices.length, 'services');
   }
 
   async getUser(id: number): Promise<User | undefined> {

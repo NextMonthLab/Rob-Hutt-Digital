@@ -12,19 +12,21 @@ const AboutSection = () => {
   }
 
   // Fallback data if API fails
-  const fallbackAbout: About = {
-    bio: [
-      "With over 15 years of experience in digital strategy and creative direction, I've helped brands across multiple industries strengthen their digital presence and streamline their operations.",
-      "My background spans award-winning filmmaking, marketing automation, and brand development—giving me a unique perspective that bridges creative vision with technical execution.",
-      "I believe in simplifying the complex, removing bottlenecks, and delivering solutions that not only look great but perform exceptionally well."
-    ],
-    credentials: [
-      "Royal Television Society Award - Documentary Direction",
-      "Certified Marketing Automation Specialist",
-      "Featured in Creative Quarterly, \"Digital Innovators\""
-    ],
-    quote: "I'm passionate about helping people translate their vision into reality. Technology should simplify, not complicate.",
-    profileImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+  const fallbackAbout = {
+    content: {
+      bio: [
+        "Professional with extensive experience in business strategy and client solutions. Passionate about helping businesses grow and succeed through innovative approaches.",
+        "Dedicated to delivering exceptional results and building lasting relationships with clients across various industries.",
+        "Committed to staying ahead of industry trends and continuously improving service offerings to meet evolving market needs."
+      ],
+      credentials: [
+        "Industry Certification - Business Strategy",
+        "Professional Development Certificate",
+        "Featured Speaker at Industry Conference"
+      ],
+      quote: "Success comes from understanding client needs and delivering solutions that exceed expectations."
+    },
+    profileImage: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80"
   };
 
   const aboutData = about || fallbackAbout;
@@ -56,10 +58,10 @@ const AboutSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h2 className="font-['Montserrat'] font-bold text-3xl md:text-4xl mb-6">About Rob</h2>
+            <h2 className="font-['Montserrat'] font-bold text-3xl md:text-4xl mb-6">About Our Business</h2>
             
             <div className="prose max-w-none text-gray-700">
-              {aboutData.bio.map((paragraph, index) => (
+              {aboutData.content.bio.map((paragraph, index) => (
                 <p key={index} className="mb-4">
                   {paragraph}
                 </p>

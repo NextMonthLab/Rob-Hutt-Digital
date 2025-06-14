@@ -103,7 +103,138 @@ export class MemStorage implements IStorage {
     this.highlightCardCurrentId = 1;
     this.contactSubmissionCurrentId = 1;
     
-    // Initialize with default data if needed
+    // Initialize with generic template data
+    this.initializeGenericTemplateData()
+  }
+
+  private initializeGenericTemplateData() {
+    console.log('=== INITIALIZING GENERIC BUSINESS TEMPLATE ===');
+    
+    // Generic business services
+    const genericServices: Service[] = [
+      {
+        id: 1,
+        title: "Service Name 1",
+        type: "service",
+        tag: "popular",
+        icon: "bx-briefcase",
+        description: "Brief description of what this service includes and how it benefits your clients. Customize this text to match your business offerings.",
+        detailUrl: "#services",
+        automation: "enabled",
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      },
+      {
+        id: 2,
+        title: "Service Name 2",
+        type: "service",
+        tag: "featured",
+        icon: "bx-trending-up",
+        description: "Brief description of what this service includes and how it benefits your clients. Customize this text to match your business offerings.",
+        detailUrl: "#services",
+        automation: "partial",
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      },
+      {
+        id: 3,
+        title: "Service Name 3",
+        type: "service",
+        tag: "premium",
+        icon: "bx-cog",
+        description: "Brief description of what this service includes and how it benefits your clients. Customize this text to match your business offerings.",
+        detailUrl: "#services",
+        automation: null,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      }
+    ];
+
+    // Generic highlight cards
+    const genericHighlightCards: HighlightCard[] = [
+      {
+        id: 1,
+        type: "highlight",
+        title: "Strategic Excellence",
+        tag: null,
+        icon: "bx-rocket",
+        description: "Proven track record of delivering results that exceed expectations and drive business growth.",
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      },
+      {
+        id: 2,
+        type: "highlight",
+        title: "Trusted Partnership",
+        tag: null,
+        icon: "bx-shield-check",
+        description: "Building long-term relationships based on transparency, reliability, and consistent performance.",
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      },
+      {
+        id: 3,
+        type: "highlight",
+        title: "Innovation Focus",
+        tag: null,
+        icon: "bx-trending-up",
+        description: "Staying ahead of industry trends to deliver cutting-edge solutions that give you competitive advantage.",
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      }
+    ];
+
+    // Generic about content
+    const genericAbout: About = {
+      id: 1,
+      type: "about",
+      title: "About Our Business",
+      tag: null,
+      content: {
+        bio: [
+          "Professional with extensive experience in business strategy and client solutions. Passionate about helping businesses grow and succeed through innovative approaches.",
+          "Dedicated to delivering exceptional results and building lasting relationships with clients across various industries.",
+          "Committed to staying ahead of industry trends and continuously improving service offerings to meet evolving market needs."
+        ],
+        credentials: [
+          "Industry Certification - Business Strategy",
+          "Professional Development Certificate",
+          "Featured Speaker at Industry Conference"
+        ],
+        quote: "Success comes from understanding client needs and delivering solutions that exceed expectations.",
+        skills: {
+          creativeSkills: [
+            { name: "Strategic Planning", level: 95 },
+            { name: "Creative Problem Solving", level: 90 },
+            { name: "Client Communication", level: 95 }
+          ],
+          technicalSkills: [
+            { name: "Business Analysis", level: 90 },
+            { name: "Process Optimization", level: 85 },
+            { name: "Project Management", level: 95 }
+          ]
+        }
+      },
+      profileImage: null,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
+    };
+
+    // Initialize storage with generic data
+    genericServices.forEach(service => {
+      this.services.set(service.id, service);
+    });
+    this.serviceCurrentId = genericServices.length + 1;
+
+    genericHighlightCards.forEach(card => {
+      this.highlightCards.set(card.id, card);
+    });
+    this.highlightCardCurrentId = genericHighlightCards.length + 1;
+
+    this.about = genericAbout;
+
+    console.log('Generic business template initialized with', genericServices.length, 'services');
+    console.log('Service titles:', genericServices.map(s => s.title));
   }
 
   // User methods
