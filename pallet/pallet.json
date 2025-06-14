@@ -1,7 +1,9 @@
 {
-  "name": "rob-hutt-digital",
+  "name": "business-robhutt-digital",
+  "description": "A clean, professional business website template built for NextMonth Lab.",
   "version": "1.0.0",
-  "type": "static-site",
+  "type": "business-website",
+  "category": "business",
   "port": 5000,
   "status": "ready",
   "deployment": {
@@ -9,5 +11,13 @@
     "docker": true,
     "serve_script": true
   },
-  "tags": ["agora", "pallet"]
+  "features": [
+    "Responsive design",
+    "Contact forms", 
+    "Service showcase",
+    "About section",
+    "NextMonth SOT integration",
+    "Admin dashboard"
+  ],
+  "tags": ["business", "professional", "nextmonth", "template"]
 }

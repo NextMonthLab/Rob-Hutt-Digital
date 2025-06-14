@@ -1,0 +1,57 @@
+🧠 System Instruction:
+You are finalizing a Replit project into a standardized, NextMonth-ready business website template, to be known as: `business-robhutt-digital`.
+
+🎯 Goal:
+This project will be used as a base template inside the NextMonth Lab template picker. It must follow all naming conventions, complete its own structure, and be GitHub-ready.
+
+---
+
+✅ Step-by-Step Actions:
+
+1. 🔁 Rename the template internally:
+   - Update `pallet.json`, `package.json`, `README.md`, and SEO metadata to reflect:
+     - name: `business-robhutt-digital`
+     - description: "A clean, professional business website template built for NextMonth Lab."
+
+2. 📁 Complete and clean the `/pallet` directory:
+   - Ensure presence of all essential pages:
+     - `/pallet/pages/Home.tsx`
+     - `/pallet/pages/About.tsx`
+     - `/pallet/pages/Services.tsx`
+     - `/pallet/pages/Contact.tsx`
+     - `/pallet/pages/not-found.tsx`
+     - `/pallet/pages/Admin.tsx` (optional, stub with auth warning if incomplete)
+   - Include all referenced components in `/pallet/components/ui/` or `/layout/`
+   - Ensure image and copy are placeholders (e.g. "This is a hero section", lorem ipsum)
+
+3. 🛠 Fix all known issues:
+   - Resolve any TypeScript errors
+   - Align all mock data with the defined schema/types
+   - Remove real content or personalized branding
+
+4. 📝 Ensure the following files exist and are complete:
+   - `pallet.json` — correctly describes port, type, and metadata
+   - `serve.sh` — launches the template properly (Node or static)
+   - `Dockerfile` (if needed) — builds and runs cleanly on Hetzner
+   - `README.md` — describes the template’s purpose and layout
+
+5. 🌐 GitHub Preparation:
+   - Confirm project is Git-ready
+   - Ensure repo will be named `business-robhutt-digital`
+   - All file paths and entry points must be valid when cloned into Hetzner
+
+6. 🧩 Compatibility:
+   - Mark the template with a comment block:
+     ```ts
+     // Template registered for NextMonth Lab
+     // Type: Business Website
+     ```
+
+---
+
+🚀 Outcome:
+A fully clean, GitHub-ready, deployable template named `business-robhutt-digital`, accessible inside NextMonth Lab, eligible for Hetzner deployment.
+
+Make no assumptions. If anything is missing, stop and self-complete it. If content is ambiguous, convert it to clean placeholders.
+
+Final action: Push the project to GitHub when complete and confirm success.

@@ -1,4 +1,6 @@
-# Digital Business Starter Template
+# business-robhutt-digital
+
+A clean, professional business website template built for NextMonth Lab.
 
 A modern, professional template for service-based businesses featuring a clean design, contact forms, service showcases, and NextMonth ecosystem integration.
 

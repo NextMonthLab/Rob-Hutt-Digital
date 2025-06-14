@@ -1,3 +1,6 @@
+// Template registered for NextMonth Lab
+// Type: Business Website
+
 import { useToast } from "@/hooks/use-toast"
 import {
   Toast,
