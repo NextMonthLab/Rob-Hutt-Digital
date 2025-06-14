@@ -9,7 +9,7 @@ console.log('Building static site for GitHub Pages...');
 try {
   // Build the frontend with Vite
   console.log('Building frontend...');
-  execSync('vite build', { stdio: 'pipe' });
+  execSync('npx vite build', { stdio: 'pipe' });
   
   // Create a simple .nojekyll file to bypass Jekyll processing
   const distDir = './dist';
