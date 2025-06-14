@@ -71,7 +71,7 @@ const AboutSection = () => {
             <div className="mb-8">
               <h3 className="font-['Montserrat'] font-semibold text-xl mb-4">Awards & Credentials</h3>
               <ul className="space-y-2">
-                {aboutData.credentials.map((credential, index) => (
+                {aboutData.content.credentials.map((credential: string, index: number) => (
                   <li key={index} className="flex items-start gap-2">
                     <i className='bx bx-trophy text-[#1e3a8a] mt-1'></i>
                     <span>{credential}</span>
@@ -87,7 +87,7 @@ const AboutSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.3 }}
             >
-              {aboutData.quote}
+              {aboutData.content.quote}
             </motion.div>
           </motion.div>
         </div>
