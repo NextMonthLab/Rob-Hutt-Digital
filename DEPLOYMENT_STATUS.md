@@ -5,10 +5,10 @@
 ### ✅ Completed Configurations
 
 1. **GitHub Actions Workflow**
-   - Created `.github/workflows/deploy.yml`
-   - Configured Node.js 20 build environment
-   - Set to deploy on push to main/master branches
-   - Uses `node build-static.js` for static site generation
+   - Updated `.github/workflows/deploy.yml` to deploy from `/pallet` directory
+   - Simplified workflow - no build process needed
+   - Set to deploy on push to main branch only
+   - Direct deployment of static files from `/pallet` folder
 
 2. **Template Metadata Updated**
    - Updated `template-metadata.json` with correct URLs
@@ -16,10 +16,10 @@
    - Updated title to "Rob Hutt Digital Portfolio"
    - Added digital-agency tag for proper categorization
 
-3. **Static Build System**
-   - Existing `build-static.js` script ready for deployment
-   - Generates optimized static files in `./dist` directory
-   - Includes all necessary assets and dependencies
+3. **Auto-Push System**
+   - Created `auto-push.sh` script for automatic Git commits
+   - Enables automatic deployment on file changes
+   - Requires Replit Git authentication to be configured
 
 ### 🔧 Manual Steps Required (Repository Admin)
 

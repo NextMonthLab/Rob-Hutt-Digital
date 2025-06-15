@@ -141,6 +141,12 @@ Changelog:
   - Created individual service detail pages with routing
   - Added comprehensive deployment documentation
   - Template ready for immediate GitHub Pages deployment
+- June 15, 2025. Fixed GitHub Pages deployment path and auto-push setup
+  - Updated workflow to deploy from /pallet directory instead of /dist
+  - Simplified GitHub Actions workflow - no build process needed
+  - Created auto-push.sh script for automatic Git commits from Replit
+  - Added REPLIT_AUTO_PUSH_SETUP.md for seamless development workflow
+  - Template now deploys correctly from static files in /pallet folder
 ```
 
 ## User Preferences

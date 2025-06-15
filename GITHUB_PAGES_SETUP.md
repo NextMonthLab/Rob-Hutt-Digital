@@ -9,8 +9,8 @@
 
 ### 2. Verify Deployment Workflow
 The `.github/workflows/deploy.yml` file is already configured and will:
-- Build the static application using `node build-static.js`
-- Deploy to GitHub Pages automatically on every push to main/master
+- Deploy static files directly from the `/pallet` directory
+- Deploy to GitHub Pages automatically on every push to main branch
 
 ### 3. Live Preview URL
 Once GitHub Pages is enabled, the template will be available at:
