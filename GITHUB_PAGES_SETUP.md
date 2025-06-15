@@ -7,7 +7,17 @@
 2. Set **Source** to "GitHub Actions" (not branch deployment)
 3. Save the settings
 
-### 2. Verify Deployment Workflow
+### 2. Configure Environment Protection Rules
+**CRITICAL**: Configure environment settings to prevent deployment failures:
+
+1. Go to: https://github.com/NextMonthLab/Rob-Hutt-Digital/settings/environments
+2. Click on **github-pages** environment (created automatically)
+3. Under **Deployment branches**, ensure **main** branch is allowed
+4. Save environment settings
+
+Without this step, the deploy job will fail with protection rule errors.
+
+### 3. Verify Deployment Workflow
 The `.github/workflows/deploy.yml` file is already configured and will:
 - Deploy static files directly from the `/pallet` directory
 - Deploy to GitHub Pages automatically on every push to main branch
