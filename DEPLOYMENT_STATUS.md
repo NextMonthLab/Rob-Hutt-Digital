@@ -28,6 +28,12 @@
 2. Set Source to "GitHub Actions" (not branch deployment)
 3. Save settings
 
+**CRITICAL: Configure Environment Protection**
+1. Go to: https://github.com/NextMonthLab/Rob-Hutt-Digital/settings/environments
+2. Click on "github-pages" environment
+3. Under "Deployment branches", ensure "main" branch is allowed
+4. Save environment settings (prevents protection rule errors)
+
 **Verify Deployment**
 1. Push any small change to trigger first build
 2. Monitor Actions tab for deployment status

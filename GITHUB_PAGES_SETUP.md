@@ -22,11 +22,11 @@ The `.github/workflows/deploy.yml` file is already configured and will:
 - Deploy static files directly from the `/pallet` directory
 - Deploy to GitHub Pages automatically on every push to main branch
 
-### 3. Live Preview URL
+### 4. Live Preview URL
 Once GitHub Pages is enabled, the template will be available at:
 **https://nextmonthlab.github.io/Rob-Hutt-Digital/**
 
-### 4. Template Metadata
+### 5. Template Metadata
 The `template-metadata.json` file has been updated with:
 - Correct live preview URL
 - Rob Hutt Digital branding
