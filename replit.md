@@ -128,7 +128,10 @@ Changelog:
   - Added complete GitHub Pages deployment support with GitHub Actions workflow
   - Created custom build script and comprehensive deployment documentation
   - Installed gh-pages package for manual deployment option
-  - Template ready for static site deployment and NextMonth Lab integration
+  - Finalized NextMonth Lab integration with template-metadata.json
+  - Created preview.png from homepage screenshot for template cards
+  - Updated README.md with comprehensive customization guide
+  - Template ready for public GitHub repository and NextMonth Lab integration
 ```
 
 ## User Preferences

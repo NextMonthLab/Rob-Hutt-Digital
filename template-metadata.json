@@ -1,0 +1,29 @@
+{
+  "title": "Professional Business Template",
+  "type": "frontend",
+  "tags": ["business", "clean", "responsive", "nextmonth"],
+  "description": "A modern, responsive website template for business owners and service providers. Features professional design, customizable content sections, and NextMonth ecosystem integration.",
+  "features": [
+    "Modular page structure with Hero, Services, About, Contact sections",
+    "Customizable color palette and branding",
+    "Mobile-optimized responsive layout",
+    "SEO-friendly with proper meta tags",
+    "NextMonth SOT integration for business data sync",
+    "Professional service showcase components",
+    "Contact form with webhook integration",
+    "Admin dashboard for system monitoring"
+  ],
+  "previewImage": "https://raw.githubusercontent.com/USERNAME/REPO-NAME/main/preview.png",
+  "livePreview": "https://USERNAME.github.io/REPO-NAME/",
+  "version": "1.0.0",
+  "author": "NextMonth Lab",
+  "license": "MIT",
+  "technologies": ["React", "TypeScript", "Vite", "TailwindCSS", "Framer Motion"],
+  "pages": ["Home", "About", "Services", "Contact", "Admin"],
+  "customization": {
+    "branding": "Replace 'Your Business' with company name",
+    "services": "Update service data in storage configuration",
+    "colors": "Modify theme.json for brand colors",
+    "content": "Customize hero section, about text, and contact info"
+  }
+}

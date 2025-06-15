@@ -1,21 +1,74 @@
-# Rob Hutt Digital - Personal Brand Web App
+# Professional Business Template
 
-A modular personal brand web application for Rob Hutt showcasing his expertise with integration capabilities for the NextMonth Developer ecosystem.
+A modern, responsive website template for business owners and service providers. This template features professional design, customizable content sections, and NextMonth ecosystem integration for seamless business management.
 
 ## Features
 
-- Modern, responsive design with Tailwind CSS
-- NextMonth ecosystem integration as an official Council Member
-- Source of Truth (SOT) integration for synchronized data exchange
-- Webhook notification system for real-time updates
-- Admin interface for SOT integration management
+- **Professional Design**: Modern, responsive layout optimized for business websites
+- **Customizable Sections**: Hero, Services, About, Contact, and Admin pages
+- **NextMonth Integration**: Built-in SOT (Source of Truth) for business data synchronization
+- **Mobile Optimized**: Fully responsive design that works on all devices
+- **SEO Ready**: Proper meta tags and semantic HTML structure
+- **Contact Forms**: Integrated contact forms with webhook notifications
+- **Admin Dashboard**: Monitor system health and manage integrations
 
 ## Tech Stack
 
-- Frontend: React, TypeScript, Tailwind CSS, shadcn/ui
-- Backend: Express, Node.js
-- Integration: NextMonth API, Webhooks
-- Deployment: Docker, Hetzner VPS
+- **Frontend**: React 18, TypeScript, Vite, TailwindCSS, Framer Motion
+- **UI Components**: shadcn/ui, Radix UI primitives
+- **State Management**: TanStack Query for server state
+- **Routing**: Wouter for lightweight client-side routing
+- **Forms**: React Hook Form with Zod validation
+- **Integration**: NextMonth API, Webhook system
+
+## Using This Template in NextMonth Lab
+
+This template is designed for easy customization through NextMonth Lab's AI-assisted platform:
+
+### 1. Brand Customization
+- Replace "Your Business" with your company name
+- Update colors in `theme.json` to match your brand
+- Customize hero section content and imagery
+
+### 2. Service Configuration
+- Modify service offerings in the storage configuration
+- Update service descriptions and icons
+- Add or remove service categories
+
+### 3. Content Updates
+- Personalize the About section with your business story
+- Update contact information and social media links
+- Customize highlight cards with your value propositions
+
+### 4. Advanced Customization
+- Integrate with your existing business systems via NextMonth SOT
+- Configure webhook notifications for form submissions
+- Set up custom domain and SSL for production deployment
+
+## Quick Deployment Options
+
+### GitHub Pages (Recommended for Static Sites)
+
+This template includes automatic GitHub Pages deployment:
+
+1. **Push to GitHub**: Upload this repository to GitHub
+2. **Automatic Deployment**: GitHub Actions builds and deploys on every push to main branch
+3. **Live Site**: Access your site at `https://USERNAME.github.io/REPO-NAME/`
+
+The template automatically:
+- Builds the React application for production
+- Optimizes assets and creates static files
+- Deploys to GitHub Pages branch
+- Handles routing and asset paths correctly
+
+### Local Development
+
+```bash
+npm install
+npm run dev
+```
+
+Visit `http://localhost:5000` to see your template running locally.
 
 ## Deployment to Hetzner
 
@@ -144,6 +197,41 @@ This application is integrated with the NextMonth ecosystem as an official Counc
 - Webhook notifications enable real-time updates
 - Admin interface at `/admin/sot` provides management capabilities
 
+## Template Structure
+
+```
+├── client/src/           # React frontend application
+│   ├── components/       # Reusable UI components
+│   ├── pages/           # Page components (Home, About, Services, Contact)
+│   └── lib/             # Utilities and API client
+├── server/              # Express backend (optional for full-stack deployment)
+├── .github/workflows/   # GitHub Actions for automatic deployment
+├── template-metadata.json # NextMonth Lab integration metadata
+├── preview.png          # Template preview image
+└── README.md           # This file
+```
+
+## Customization Guide
+
+### Quick Start Customization
+
+1. **Business Name**: Search and replace "Your Business" with your company name
+2. **Services**: Edit `server/storage.ts` to update service offerings
+3. **Colors**: Modify `theme.json` for brand colors
+4. **Content**: Update hero section in `client/src/components/Hero.tsx`
+5. **Contact**: Configure contact form and social media links
+
+### Advanced Configuration
+
+- **NextMonth Integration**: Configure SOT client ID and API endpoints
+- **Webhook Setup**: Set up webhook URLs for form submissions
+- **Custom Domain**: Configure custom domain for GitHub Pages
+- **Analytics**: Add Google Analytics or other tracking scripts
+
+## Support
+
+This template is designed for NextMonth Lab integration. For customization assistance or technical support, use NextMonth Lab's AI-assisted customization tools.
+
 ## License
 
-Copyright © 2025 Rob Hutt Digital. All rights reserved.
+MIT License - Free to use for commercial and personal projects.
