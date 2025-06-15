@@ -26,7 +26,7 @@ const AboutSection = () => {
       ],
       quote: "Success comes from understanding client needs and delivering solutions that exceed expectations."
     },
-    profileImage: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80"
+    profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80"
   };
 
   const aboutData = about || fallbackAbout;
@@ -44,8 +44,8 @@ const AboutSection = () => {
           >
             <div className="relative rounded-lg overflow-hidden shadow-xl">
               <img 
-                src={aboutData.profileImage}
-                alt="Rob Hutt - Professional portrait" 
+                src={aboutData.profileImage || fallbackAbout.profileImage}
+                alt="Professional business portrait" 
                 className="w-full h-auto"
               />
             </div>
@@ -61,7 +61,7 @@ const AboutSection = () => {
             <h2 className="font-['Montserrat'] font-bold text-3xl md:text-4xl mb-6">About Our Business</h2>
             
             <div className="prose max-w-none text-gray-700">
-              {aboutData.content.bio.map((paragraph, index) => (
+              {(aboutData.content?.bio || fallbackAbout.content.bio).map((paragraph: string, index: number) => (
                 <p key={index} className="mb-4">
                   {paragraph}
                 </p>
@@ -71,7 +71,7 @@ const AboutSection = () => {
             <div className="mb-8">
               <h3 className="font-['Montserrat'] font-semibold text-xl mb-4">Awards & Credentials</h3>
               <ul className="space-y-2">
-                {aboutData.content.credentials.map((credential: string, index: number) => (
+                {(aboutData.content?.credentials || fallbackAbout.content.credentials).map((credential: string, index: number) => (
                   <li key={index} className="flex items-start gap-2">
                     <i className='bx bx-trophy text-[#1e3a8a] mt-1'></i>
                     <span>{credential}</span>
@@ -87,7 +87,7 @@ const AboutSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.3 }}
             >
-              {aboutData.content.quote}
+              {aboutData.content?.quote || fallbackAbout.content.quote}
             </motion.div>
           </motion.div>
         </div>
