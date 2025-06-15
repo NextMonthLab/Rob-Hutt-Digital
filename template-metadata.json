@@ -1,8 +1,8 @@
 {
-  "title": "Professional Business Template",
-  "type": "frontend",
-  "tags": ["business", "clean", "responsive", "nextmonth"],
-  "description": "A modern, responsive website template for business owners and service providers. Features professional design, customizable content sections, and NextMonth ecosystem integration.",
+  "title": "Rob Hutt Digital Portfolio",
+  "type": "business portfolio",
+  "tags": ["business", "portfolio", "professional", "nextmonth", "digital-agency"],
+  "description": "Professional digital agency portfolio template with NextMonth integration and modern design elements.",
   "features": [
     "Modular page structure with Hero, Services, About, Contact sections",
     "Customizable color palette and branding",
@@ -13,8 +13,8 @@
     "Contact form with webhook integration",
     "Admin dashboard for system monitoring"
   ],
-  "previewImage": "https://raw.githubusercontent.com/USERNAME/REPO-NAME/main/preview.png",
-  "livePreview": "https://USERNAME.github.io/REPO-NAME/",
+  "previewImage": "https://raw.githubusercontent.com/NextMonthLab/Rob-Hutt-Digital/main/preview.png",
+  "livePreview": "https://nextmonthlab.github.io/Rob-Hutt-Digital/",
   "version": "1.0.0",
   "author": "NextMonth Lab",
   "license": "MIT",

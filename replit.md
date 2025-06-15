@@ -132,6 +132,15 @@ Changelog:
   - Created preview.png from homepage screenshot for template cards
   - Updated README.md with comprehensive customization guide
   - Template ready for public GitHub repository and NextMonth Lab integration
+- June 15, 2025. URGENT GitHub Pages deployment fix
+  - Created .github/workflows/deploy.yml for GitHub Actions deployment
+  - Updated template-metadata.json with correct Rob Hutt Digital branding
+  - Set live preview URL to https://nextmonthlab.github.io/Rob-Hutt-Digital/
+  - Fixed professional portrait image in About section
+  - Enhanced Skills & Expertise section with proper container padding
+  - Created individual service detail pages with routing
+  - Added comprehensive deployment documentation
+  - Template ready for immediate GitHub Pages deployment
 ```
 
 ## User Preferences

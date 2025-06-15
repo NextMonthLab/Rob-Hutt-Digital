@@ -1,70 +1,40 @@
-# GitHub Pages Deployment - Complete Setup
+# GitHub Pages Setup for Rob Hutt Digital Template
 
-## Files Added for GitHub Pages Support
+## Quick Setup Instructions
 
-✅ **`.github/workflows/deploy.yml`** - GitHub Actions workflow for automatic deployment  
-✅ **`build-static.js`** - Custom build script for static site generation  
-✅ **`DEPLOY.md`** - Comprehensive deployment documentation  
-✅ **`gh-pages`** package installed for manual deployment option
+### 1. Enable GitHub Pages
+1. Go to: https://github.com/NextMonthLab/Rob-Hutt-Digital/settings/pages
+2. Set **Source** to "GitHub Actions" (not branch deployment)
+3. Save the settings
 
-## Quick Start
+### 2. Verify Deployment Workflow
+The `.github/workflows/deploy.yml` file is already configured and will:
+- Build the static application using `npm run build:static`
+- Deploy to GitHub Pages automatically on every push to main/master
 
-1. **Push to GitHub**: Upload this repository to GitHub
-2. **Automatic Setup**: The workflow will automatically create and configure GitHub Pages
-3. **Deploy**: Push to `main` branch triggers automatic deployment
-4. **Access Site**: After deployment completes, find your site URL in the Actions tab
+### 3. Live Preview URL
+Once GitHub Pages is enabled, the template will be available at:
+**https://nextmonthlab.github.io/Rob-Hutt-Digital/**
 
-## Repository Name Configuration
+### 4. Template Metadata
+The `template-metadata.json` file has been updated with:
+- Correct live preview URL
+- Rob Hutt Digital branding
+- NextMonth Lab integration details
 
-Current configuration assumes repository name: `business-site-template`
+## Deployment Process
 
-**To use a different repository name:**
-- The Vite base path is currently set in the existing config
-- Update any hardcoded references if needed
-- GitHub Actions will automatically handle the deployment
+1. **Automatic Builds**: Every push to main/master triggers deployment
+2. **Build Process**: Uses Node.js 20, installs dependencies, builds static files
+3. **Deployment**: Deploys built files to GitHub Pages
+4. **Live URL**: Updates automatically at the GitHub Pages URL
 
-## Build Process
+## Verification Steps
 
-The deployment uses a streamlined build process:
-- Frontend built with existing Vite configuration
-- Static files generated in `./dist` directory
-- `.nojekyll` file added for proper GitHub Pages handling
-- Automatic deployment via GitHub Actions
+After enabling GitHub Pages:
+1. Push any change to trigger first deployment
+2. Check Actions tab for deployment status
+3. Verify live site at the GitHub Pages URL
+4. Confirm NextMonth Lab can access the live preview
 
-## Manual Deployment (Optional)
-
-For immediate deployment without pushing to GitHub:
-
-```bash
-node build-static.js
-npx gh-pages -d dist
-```
-
-## Deployment URL Structure
-
-Your deployed site will be available at:
-```
-https://<github-username>.github.io/<repository-name>/
-```
-
-## Important Notes
-
-- This creates a **static frontend-only** deployment
-- Express.js backend functionality not included in GitHub Pages
-- NextMonth SOT integration will need production API configuration
-- All API calls default to relative paths (suitable for static deployment)
-
-## Template Benefits for GitHub Pages
-
-The business template is well-suited for GitHub Pages because:
-- React frontend compiles to static HTML/CSS/JS
-- Professional design works across all devices
-- Generic content ready for customization
-- Self-contained with minimal external dependencies
-
-## Next Steps
-
-1. Push this repository to GitHub
-2. Configure GitHub Pages in repository settings
-3. Customize the base URL if using different repository name
-4. Deploy and share your business template!
+This configuration will immediately resolve the "metadata missing" and "Live Preview Not Available" issues in NextMonth Lab.
