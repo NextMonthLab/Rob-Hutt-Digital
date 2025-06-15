@@ -11,7 +11,7 @@ type HeroProps = {
 const Hero = ({ 
   title = "Professional Business Services",
   tagline = "Quality service provider. Customer focused. Results driven.",
-  profileImage = "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80"
+  profileImage = "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80"
 }: HeroProps) => {
   
   return (
