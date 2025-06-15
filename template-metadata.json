@@ -19,7 +19,7 @@
   "author": "NextMonth Lab",
   "license": "MIT",
   "technologies": ["React", "TypeScript", "Vite", "TailwindCSS", "Framer Motion"],
-  "pages": ["Home", "About", "Services", "Contact", "Admin"],
+  "pages": ["Home", "About", "Services", "Service Details", "Contact", "Admin"],
   "customization": {
     "branding": "Replace 'Your Business' with company name",
     "services": "Update service data in storage configuration",

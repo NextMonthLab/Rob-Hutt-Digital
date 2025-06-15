@@ -5,7 +5,7 @@ A modern, responsive website template for business owners and service providers.
 ## Features
 
 - **Professional Design**: Modern, responsive layout optimized for business websites
-- **Customizable Sections**: Hero, Services, About, Contact, and Admin pages
+- **Customizable Sections**: Hero, Services, Service Details, About, Contact, and Admin pages
 - **NextMonth Integration**: Built-in SOT (Source of Truth) for business data synchronization
 - **Mobile Optimized**: Fully responsive design that works on all devices
 - **SEO Ready**: Proper meta tags and semantic HTML structure

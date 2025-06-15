@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import { Service } from "@/lib/types";
 
 const ServiceCards = () => {
@@ -91,15 +92,19 @@ const ServiceCard = ({ service, index }: { service: Service; index: number }) =>
         </div>
         <h3 className="font-['Montserrat'] font-bold text-xl mb-3">{service.title}</h3>
         <p className="text-gray-600 mb-4">{service.description}</p>
-        <motion.a 
-          href="#" 
+        <Link 
+          href={`/service/${service.id}`}
           className="text-[#1e3a8a] font-medium hover:underline flex items-center gap-1"
-          whileHover={{ x: 5 }}
-          transition={{ type: "spring", stiffness: 400 }}
         >
-          Learn more
-          <i className='bx bx-right-arrow-alt'></i>
-        </motion.a>
+          <motion.span
+            className="flex items-center gap-1"
+            whileHover={{ x: 5 }}
+            transition={{ type: "spring", stiffness: 400 }}
+          >
+            Learn more
+            <i className='bx bx-right-arrow-alt'></i>
+          </motion.span>
+        </Link>
       </div>
     </motion.div>
   );
