@@ -8,8 +8,8 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <div className="font-['Montserrat'] font-bold text-xl mb-2">Rob Hutt</div>
-            <p className="text-gray-400">Digital Strategy & Creative Execution</p>
+            <div className="font-['Montserrat'] font-bold text-xl mb-2">Your Business</div>
+            <p className="text-gray-400">Professional Services & Solutions</p>
           </div>
           
           <div className="flex flex-col md:flex-row gap-4 md:gap-8">
@@ -21,7 +21,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
-          <p>© {currentYear} Rob Hutt. All rights reserved. Powered by NextMonth.</p>
+          <p>© {currentYear} Your Business. All rights reserved. Powered by NextMonth.</p>
         </div>
       </div>
     </footer>
