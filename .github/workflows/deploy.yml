@@ -31,7 +31,7 @@ jobs:
         run: npm ci
         
       - name: Build application
-        run: npm run build:static
+        run: node build-static.js
         
       - name: Setup Pages
         uses: actions/configure-pages@v4

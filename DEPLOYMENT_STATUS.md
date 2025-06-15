@@ -8,7 +8,7 @@
    - Created `.github/workflows/deploy.yml`
    - Configured Node.js 20 build environment
    - Set to deploy on push to main/master branches
-   - Uses `npm run build:static` for static site generation
+   - Uses `node build-static.js` for static site generation
 
 2. **Template Metadata Updated**
    - Updated `template-metadata.json` with correct URLs
