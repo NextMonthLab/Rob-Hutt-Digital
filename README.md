@@ -34,6 +34,7 @@ This template is designed for easy customization through NextMonth Lab's AI-assi
 - Modify service offerings in the storage configuration
 - Update service descriptions and icons
 - Add or remove service categories
+- Customize individual service detail pages with specific content
 
 ### 3. Content Updates
 - Personalize the About section with your business story

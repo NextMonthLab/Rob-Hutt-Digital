@@ -28,21 +28,23 @@ const SkillsSection = () => {
   const skills = about?.skills || fallbackSkills;
 
   return (
-    <div className="mt-16">
-      <h3 className="font-['Montserrat'] font-semibold text-xl mb-6 text-center">Skills & Expertise</h3>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <SkillCategory 
-          title="Creative" 
-          skills={skills.creativeSkills} 
-        />
+    <section className="py-16 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <h3 className="font-['Montserrat'] font-semibold text-xl mb-6 text-center">Skills & Expertise</h3>
         
-        <SkillCategory 
-          title="Technical" 
-          skills={skills.technicalSkills} 
-        />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <SkillCategory 
+            title="Creative" 
+            skills={skills.creativeSkills} 
+          />
+          
+          <SkillCategory 
+            title="Technical" 
+            skills={skills.technicalSkills} 
+          />
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -98,28 +100,30 @@ const SkillBar = ({ name, level, index }: SkillBarProps) => {
 
 const SkillsSectionLoading = () => {
   return (
-    <div className="mt-16 animate-pulse">
-      <div className="h-6 bg-gray-200 rounded w-48 mb-6 mx-auto"></div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {[1, 2].map((i) => (
-          <div key={i}>
-            <div className="h-5 bg-gray-200 rounded w-24 mb-3"></div>
-            <div className="space-y-4">
-              {[1, 2, 3].map((j) => (
-                <div key={j}>
-                  <div className="flex justify-between mb-1">
-                    <div className="h-4 bg-gray-200 rounded w-24"></div>
-                    <div className="h-4 bg-gray-200 rounded w-10"></div>
+    <section className="py-16 bg-gray-50">
+      <div className="container mx-auto px-4 animate-pulse">
+        <div className="h-6 bg-gray-200 rounded w-48 mb-6 mx-auto"></div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {[1, 2].map((i) => (
+            <div key={i}>
+              <div className="h-5 bg-gray-200 rounded w-24 mb-3"></div>
+              <div className="space-y-4">
+                {[1, 2, 3].map((j) => (
+                  <div key={j}>
+                    <div className="flex justify-between mb-1">
+                      <div className="h-4 bg-gray-200 rounded w-24"></div>
+                      <div className="h-4 bg-gray-200 rounded w-10"></div>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2"></div>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2"></div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
